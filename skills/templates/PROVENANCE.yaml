@@ -1,0 +1,24 @@
+skill_name:
+origin: original | adapted | third-party
+status: incubating | approved | rejected | archived
+
+upstream:
+  repository:
+  path:
+  commit_or_version:
+  license:
+  author:
+
+import:
+  imported_at:
+  imported_by:
+
+modifications:
+  adapted:
+  summary:
+
+review:
+  safety_status:
+  licensing_status:
+  quality_status:
+  reviewed_at:

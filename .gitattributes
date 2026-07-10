@@ -1,0 +1,22 @@
+* text=auto
+
+.gitattributes text eol=lf
+
+*.md   text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+*.json text eol=lf
+*.js   text eol=lf
+*.cjs  text eol=lf
+*.ts   text eol=lf
+*.sh   text eol=lf
+*.html text eol=lf
+*.dot  text eol=lf
+
+NOTICE text eol=lf
+
+# Preserve upstream formatting in imported snapshots.
+# Some Markdown files intentionally contain trailing spaces for hard line breaks.
+skills/incubating/vercel-react-best-practices/** -whitespace
+skills/incubating/writing-skills/SKILL.md -whitespace
+skills/rejected/** -whitespace
