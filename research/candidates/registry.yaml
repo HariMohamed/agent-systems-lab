@@ -377,7 +377,14 @@ candidates:
           critical_partial: 0
           critical_failed: 0
           average_score: 10
-        next_gate: repository_review
+        repository_review:
+          artifact: evaluations/observability-investigation/REPOSITORY-REVIEW.md
+          method: repository_static_review
+          recommendation: APPROVE_FOR_PROMOTION
+          blocking_findings: 0
+          non_blocking_findings: 6
+          average_score: 9.8125
+        next_gate: promotion_review
     unknowns: [precise_notice_requirements]
     notes: Official Prometheus implementation. Phase 5B snapshot created.
 
