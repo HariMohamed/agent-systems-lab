@@ -1,0 +1,509 @@
+- id: "candidate-registry"
+  title: "Candidate Registry Template"
+  artifact_types: ["template"]
+  domains: ["Agent foundations"]
+  capability: "provenance capture"
+  priority: "P0"
+  reason: "Essential for tracking incoming candidates before import"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "provenance and immutability"
+  license_focus: "upstream license fields"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 0"
+  status: planned
+
+- id: "safe-import-workflow"
+  title: "Safe Import Workflow"
+  artifact_types: ["workflow", "script"]
+  domains: ["Agent foundations"]
+  capability: "safe import workflow"
+  priority: "P0"
+  reason: "Must have a safe path to pull artifacts into incubating without execution"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "no-execute boundaries"
+  license_focus: "copying original notices"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 0"
+  status: planned
+
+- id: "security-screening-checklist"
+  title: "Security Screening Checklist"
+  artifact_types: ["policy", "reference"]
+  domains: ["Cybersecurity and defensive security"]
+  capability: "security screening"
+  priority: "P0"
+  reason: "Pre-requisite for screening third-party artifacts"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "malware and prompt injection"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 0"
+  status: planned
+
+- id: "immutable-source-capture"
+  title: "Immutable Source Capture Script"
+  artifact_types: ["script"]
+  domains: ["DevOps and platform engineering"]
+  capability: "immutable source capture"
+  priority: "P0"
+  reason: "Automates safe cloning/hashing of candidate commits"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "isolation and read-only operations"
+  license_focus: "none"
+  evaluation_needed: "unit tests"
+  discovery_wave: "Wave 0"
+  status: planned
+
+- id: "behavioral-evaluation-harness"
+  title: "Behavioral Evaluation Harness"
+  artifact_types: ["evaluation"]
+  domains: ["Testing and quality"]
+  capability: "behavioral evaluation templates"
+  priority: "P0"
+  reason: "Standardized testing for new skills"
+  existing_coverage: "partial (checklist exists)"
+  overlap_to_check: "skill-audit-checklist.md"
+  safety_focus: "test isolation"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 0"
+  status: planned
+
+- id: "license-verification-script"
+  title: "License Verification Script"
+  artifact_types: ["script", "tool-integration"]
+  domains: ["Agent foundations"]
+  capability: "license verification"
+  priority: "P0"
+  reason: "Automated checks against OSI licenses"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "accuracy"
+  license_focus: "full compliance check"
+  evaluation_needed: "unit tests"
+  discovery_wave: "Wave 0"
+  status: planned
+
+- id: "systematic-debugging"
+  title: "Systematic Debugging Workflow"
+  artifact_types: ["skill", "workflow"]
+  domains: ["Software development"]
+  capability: "debugging"
+  priority: "P1"
+  reason: "High-value core developer skill"
+  existing_coverage: "covered-incubating"
+  overlap_to_check: "existing systematic-debugging skill"
+  safety_focus: "prevent execution of unsafe debug commands"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 1"
+  status: planned
+
+- id: "test-coverage-evaluation"
+  title: "Test Coverage Evaluation"
+  artifact_types: ["evaluation"]
+  domains: ["Testing and quality"]
+  capability: "testing strategy"
+  priority: "P1"
+  reason: "Ensures generated code has tests"
+  existing_coverage: "missing"
+  overlap_to_check: "test-driven-development skill"
+  safety_focus: "read-only state"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 1"
+  status: planned
+
+- id: "documentation-generator"
+  title: "Documentation Generator"
+  artifact_types: ["script", "workflow"]
+  domains: ["Software development"]
+  capability: "documentation"
+  priority: "P1"
+  reason: "Automates docs based on code"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "no external state change"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "output validation"
+  discovery_wave: "Wave 1"
+  status: planned
+
+- id: "dependency-review-workflow"
+  title: "Dependency Review Workflow"
+  artifact_types: ["workflow"]
+  domains: ["Software development", "Cybersecurity and defensive security"]
+  capability: "dependency management"
+  priority: "P1"
+  reason: "Critical for supply chain security"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "preventing malicious installs"
+  license_focus: "check upstream"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 1"
+  status: planned
+
+- id: "code-review-guidelines"
+  title: "Code Review Guidelines"
+  artifact_types: ["reference", "policy"]
+  domains: ["Software development"]
+  capability: "code review"
+  priority: "P1"
+  reason: "Standardizes code reviews"
+  existing_coverage: "covered-incubating"
+  overlap_to_check: "requesting/receiving-code-review"
+  safety_focus: "none"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 1"
+  status: planned
+
+- id: "cicd-deployment-review"
+  title: "CI/CD Deployment Review"
+  artifact_types: ["workflow", "skill"]
+  domains: ["DevOps and platform engineering"]
+  capability: "release readiness"
+  priority: "P1"
+  reason: "Reduces deployment failures"
+  existing_coverage: "missing"
+  overlap_to_check: "finishing-a-development-branch"
+  safety_focus: "prevent unauthorized pushes"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 2"
+  status: planned
+
+- id: "observability-dashboard-template"
+  title: "Observability Dashboard Template"
+  artifact_types: ["template", "system-design"]
+  domains: ["Monitoring and reliability"]
+  capability: "dashboards"
+  priority: "P1"
+  reason: "Provides standard monitoring metrics"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "read-only queries"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 2"
+  status: planned
+
+- id: "incident-response-workflow"
+  title: "Incident Response Workflow"
+  artifact_types: ["workflow", "reference"]
+  domains: ["Monitoring and reliability"]
+  capability: "incident response"
+  priority: "P1"
+  reason: "Critical for operational readiness"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "read-only diagnostics"
+  license_focus: "none"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 2"
+  status: planned
+
+- id: "slislo-system-design"
+  title: "SLI/SLO System Design"
+  artifact_types: ["system-design"]
+  domains: ["Monitoring and reliability"]
+  capability: "SLI/SLO"
+  priority: "P1"
+  reason: "Foundational pattern for reliability"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "none"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 2"
+  status: planned
+
+- id: "threat-modeling-evaluation"
+  title: "Threat Modeling Evaluation"
+  artifact_types: ["evaluation", "workflow"]
+  domains: ["Cybersecurity and defensive security"]
+  capability: "threat modeling"
+  priority: "P1"
+  reason: "Ensures systems are designed securely"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "read-only analysis"
+  license_focus: "none"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 3"
+  status: planned
+
+- id: "secure-coding-policy"
+  title: "Secure Coding Policy"
+  artifact_types: ["policy", "reference"]
+  domains: ["Cybersecurity and defensive security"]
+  capability: "secure coding"
+  priority: "P1"
+  reason: "Baseline rules for agent code generation"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "prevent vulnerabilities"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 3"
+  status: planned
+
+- id: "supply-chain-security-script"
+  title: "Supply Chain Security Script"
+  artifact_types: ["script", "tool-integration"]
+  domains: ["Cybersecurity and defensive security"]
+  capability: "supply-chain security"
+  priority: "P1"
+  reason: "Automates dependency vulnerability checks"
+  existing_coverage: "missing"
+  overlap_to_check: "dependency-review-workflow"
+  safety_focus: "no unverified execution"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "unit tests"
+  discovery_wave: "Wave 3"
+  status: planned
+
+- id: "secrets-detection-tool"
+  title: "Secrets Detection Tool"
+  artifact_types: ["tool-integration", "workflow"]
+  domains: ["Cybersecurity and defensive security"]
+  capability: "secrets detection"
+  priority: "P1"
+  reason: "Prevents leaking credentials"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "read-only, local only"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 3"
+  status: planned
+
+- id: "distributed-systems-reference"
+  title: "Distributed Systems Architecture Reference"
+  artifact_types: ["system-design", "reference"]
+  domains: ["Architecture and system design"]
+  capability: "distributed systems"
+  priority: "P1"
+  reason: "Guides multi-service designs"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "none"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 4"
+  status: planned
+
+- id: "database-performance-analysis"
+  title: "Database Performance Analysis Workflow"
+  artifact_types: ["workflow", "script"]
+  domains: ["Databases and data systems"]
+  capability: "database performance analysis"
+  priority: "P1"
+  reason: "High value operational workflow"
+  existing_coverage: "rejected-placeholder"
+  overlap_to_check: "database-query-profiler"
+  safety_focus: "read-only EXPLAIN plans"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 4"
+  status: planned
+
+- id: "caching-strategy-pattern"
+  title: "Caching Strategy Pattern"
+  artifact_types: ["system-design", "template"]
+  domains: ["Architecture and system design"]
+  capability: "caching"
+  priority: "P2"
+  reason: "Useful design pattern for scaling"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "none"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 4"
+  status: planned
+
+- id: "multi-tenancy-architecture"
+  title: "Multi-Tenancy Architecture Pattern"
+  artifact_types: ["system-design", "reference"]
+  domains: ["Architecture and system design"]
+  capability: "multi-tenancy"
+  priority: "P2"
+  reason: "Crucial for SaaS designs"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "data isolation"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 4"
+  status: planned
+
+- id: "accessibility-review-workflow"
+  title: "Accessibility Review Workflow"
+  artifact_types: ["workflow", "evaluation"]
+  domains: ["UI/UX and product design"]
+  capability: "accessibility review"
+  priority: "P1"
+  reason: "Ensures UI accessibility compliance"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "read-only DOM analysis"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 5"
+  status: planned
+
+- id: "frontend-polish"
+  title: "Frontend Polish Skill"
+  artifact_types: ["skill", "workflow"]
+  domains: ["UI/UX and product design"]
+  capability: "frontend polish"
+  priority: "P1"
+  reason: "High value for UI development"
+  existing_coverage: "missing (impeccable/frontend-polish noted)"
+  overlap_to_check: "vercel-react-best-practices"
+  safety_focus: "no external dependencies"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 5"
+  status: planned
+
+- id: "visual-regression-evaluation"
+  title: "Visual Regression Evaluation"
+  artifact_types: ["evaluation", "script"]
+  domains: ["Testing and quality"]
+  capability: "visual regression"
+  priority: "P1"
+  reason: "Automates UI testing"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "read-only snapshots"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "unit tests"
+  discovery_wave: "Wave 5"
+  status: planned
+
+- id: "design-systems-template"
+  title: "Design Systems Template"
+  artifact_types: ["template", "reference"]
+  domains: ["UI/UX and product design"]
+  capability: "design systems"
+  priority: "P2"
+  reason: "Standardizes UI components"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "none"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 5"
+  status: planned
+
+- id: "public-crawling-pipeline"
+  title: "Public Crawling Pipeline"
+  artifact_types: ["script", "workflow"]
+  domains: ["Crawling, scraping, and browser automation"]
+  capability: "public crawling"
+  priority: "P1"
+  reason: "High value for data gathering"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "respect robots.txt, no auth bypass"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 6"
+  status: planned
+
+- id: "deep-research-workflow"
+  title: "Deep Research Workflow"
+  artifact_types: ["workflow", "skill"]
+  domains: ["Research and knowledge work"]
+  capability: "deep research"
+  priority: "P1"
+  reason: "Agent workflow for thorough research"
+  existing_coverage: "missing"
+  overlap_to_check: "find-skills"
+  safety_focus: "read-only scraping"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 6"
+  status: planned
+
+- id: "parser-fixtures"
+  title: "Parser Fixtures"
+  artifact_types: ["template", "evaluation"]
+  domains: ["Crawling, scraping, and browser automation"]
+  capability: "parser fixtures"
+  priority: "P2"
+  reason: "Standardizes crawling parser tests"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "none"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 6"
+  status: planned
+
+- id: "advanced-model-routing"
+  title: "Advanced Model Routing System Design"
+  artifact_types: ["system-design", "workflow"]
+  domains: ["AI and model engineering"]
+  capability: "model routing"
+  priority: "P2"
+  reason: "Optimizes cost and latency"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "secure API keys"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 7"
+  status: planned
+
+- id: "multi-agent-coordination"
+  title: "Multi-Agent Coordination Protocol"
+  artifact_types: ["skill", "workflow", "system-design"]
+  domains: ["Agent foundations"]
+  capability: "multi-agent orchestration"
+  priority: "P2"
+  reason: "Standardizes delegation between agents"
+  existing_coverage: "covered-incubating"
+  overlap_to_check: "subagent-driven-development, dispatching-parallel-agents"
+  safety_focus: "bounds on subagent permissions"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 7"
+  status: planned
+
+- id: "agent-memory-integration"
+  title: "Agent Memory Integration"
+  artifact_types: ["tool-integration", "system-design"]
+  domains: ["Agent foundations"]
+  capability: "memory and personalization"
+  priority: "P2"
+  reason: "Enables long term memory"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "privacy and isolation"
+  license_focus: "MIT/Apache-2.0"
+  evaluation_needed: "behavioral evaluation"
+  discovery_wave: "Wave 7"
+  status: planned
+
+- id: "tool-use-governance"
+  title: "Tool Use Governance Policy"
+  artifact_types: ["policy", "reference"]
+  domains: ["Agent foundations"]
+  capability: "tool-use governance"
+  priority: "P1"
+  reason: "Establishes bounds on agent tools"
+  existing_coverage: "missing"
+  overlap_to_check: "none"
+  safety_focus: "prevents destructive actions"
+  license_focus: "none"
+  evaluation_needed: "manual review"
+  discovery_wave: "Wave 7"
+  status: planned
