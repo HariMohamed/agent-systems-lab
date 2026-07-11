@@ -1,11 +1,14 @@
 skill_name: verification-before-completion
-origin: third-party
+origin: adapted
 status: incubating
 
 upstream:
   repository: https://github.com/obra/superpowers
   path: skills/verification-before-completion/SKILL.md
-  commit_or_version: "v6.1.1; raw exact file match also verified at commit 48410c7f1973bd66569a627ef27ef6619e0ba923; exact local import commit unknown"
+  commit_or_version: "v6.1.1; source commit 48410c7f1973bd66569a627ef27ef6619e0ba923"
+  verified_release: v6.1.1
+  matching_commit: 48410c7f1973bd66569a627ef27ef6619e0ba923
+  original_pre_adaptation_sha256: ea52d15aabaf72bc6b558efe2c126f161b53961090ddcd712000273bfe8c7b6c
   license: MIT
   author: Jesse Vincent
 
@@ -14,11 +17,16 @@ import:
   imported_by: unknown
 
 modifications:
-  adapted: false
-  summary: Local SKILL.md is byte-identical to upstream v6.1.1/current main content; no local content modifications found.
+  adapted: true
+  adapted_at: 2026-07-11
+  summary: >
+    Adapted from the verified upstream v6.1.1 file. Replaced punitive language
+    with neutral operational language, added activation exclusions, structured
+    verification statuses, explicit safety boundaries, and a required evidence
+    report format while preserving the fresh-evidence-before-claims principle.
 
 review:
   safety_status: locally reviewed; no high-risk state-changing instruction found; open upstream issue #1754 reports an outcome-verification weakness
-  licensing_status: MIT upstream license verified; redistribution permitted with MIT copyright/license notice; local import facts still incomplete
-  quality_status: adapt before approval
+  licensing_status: MIT upstream license verified; skill-local MIT license notice added
+  quality_status: provisionally ready pending Phase 2D behavioral evaluation
   reviewed_at: 2026-07-11

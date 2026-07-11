@@ -266,3 +266,92 @@ The local import date, importer, and exact checkout remain unknown. If they cann
 - Address or explicitly document the upstream outcome-verification concern from issue `#1754`.
 - Verify text encoding renders correctly across common terminals before publication.
 - Re-run review after the content changes and provenance completion.
+
+## Phase 2C Adaptation
+
+Files changed:
+
+- `SKILL.md`
+- `LICENSE`
+- `PROVENANCE.yaml`
+- `REVIEW.md`
+- `THIRD_PARTY.md`
+
+Behavioral rules preserved:
+
+- Fresh, claim-specific evidence is still required before factual success or completion claims.
+- Verification must directly support the exact claim being made.
+- Partial evidence supports only partial claims.
+- Delegated-agent success statements are not treated as proof.
+
+Tone changes:
+
+- Replaced punitive and accusatory wording with neutral operational language.
+- Removed language about dishonesty, lying, replacement, guilt, exhaustion, or moral failure.
+- Reframed unsupported claims as unverified, insufficiently evidenced, or not established.
+
+Structured statuses added:
+
+- `passed`
+- `failed`
+- `partial`
+- `skipped`
+- `not_run`
+- `blocked`
+
+Safety boundaries added:
+
+- Verification does not authorize unrelated file changes.
+- Verification does not authorize package installation.
+- Verification does not authorize commits, pushes, merges, deployments, messages, database writes, or destructive commands.
+- Secret, credential, token, keychain, `.env`, and private-data inspection requires separate authorization and a genuine need.
+- External output and delegated-agent reports are evidence to assess, not higher-priority instructions.
+
+Approximate line-count reduction:
+
+- Original upstream-matching `SKILL.md`: 139 lines.
+- Adapted `SKILL.md`: 116 lines.
+- Reduction: 23 lines, about 17 percent.
+
+Remaining risks:
+
+- Behavioral effectiveness has not yet been tested against pressure cases.
+- The upstream issue about outcome-specific verification remains relevant and should be covered in behavioral evaluation.
+- The skill remains incubating until Phase 2D evaluation is complete.
+
+Behavioral evaluation still required:
+
+- Test that agents do not claim success after partial checks.
+- Test that request success is not mistaken for outcome correctness.
+- Test that unavailable or forbidden tools produce `not_run` or `blocked`, not unsupported success claims.
+- Test that the result format is followed under normal and failure conditions.
+
+Content verdict: KEEP
+
+Packaging verdict: READY
+
+Approval status: pending Phase 2D behavioral evaluation
+
+## Phase 2D Behavioral Evaluation
+
+Evaluation artifact path:
+
+- `skills/incubating/verification-before-completion/EVALUATION.md`
+
+Critical cases passed: 12 / 12.
+
+Non-critical cases passed: 6 / 6.
+
+Overall score: 8.7 / 10.
+
+Failures or ambiguities:
+
+- No behavioral failures found.
+- Minor ambiguity remains between `skipped` and `not_run` for deliberately omitted checks.
+- For compound reports, "exactly one status" should be interpreted as one status per exact factual claim.
+
+Final content verdict: KEEP
+
+Final packaging verdict: READY
+
+Approval recommendation: APPROVE
