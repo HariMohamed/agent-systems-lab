@@ -1,5 +1,5 @@
 skill_name: find-skills
-origin: third-party
+origin: adapted
 status: incubating
 
 upstream:
@@ -7,18 +7,30 @@ upstream:
   path: skills/find-skills/SKILL.md
   commit_or_version: 0b8fb22aaa7f82447d4befe1b6a95d30a5b279b8
   license: MIT
+  license_evidence:
+    declaration_verified: true
+    sources:
+      - README.md at commit 0b8fb22aaa7f82447d4befe1b6a95d30a5b279b8
+      - package.json at commit 0b8fb22aaa7f82447d4befe1b6a95d30a5b279b8
+    standalone_license_file: not_found
+    copyright_notice: unresolved
+    redistribution_status: pending complete attribution notice
   author: unknown
+  pre_adaptation_sha256: 1E85F6F9686E145ACA4A124E3B704B9BBEA9AA87E08515C1E352EEE70F6E6E7A
 
 import:
   imported_at: unknown
   imported_by: unknown
 
 modifications:
-  adapted: false
-  summary: Local SKILL.md matches upstream commit 0b8fb22aaa7f82447d4befe1b6a95d30a5b279b8 byte-for-byte; no local content adaptations detected during Phase 3B review.
+  adapted: true
+  adapted_at: 2026-07-11
+  upstream_exact_match_before_adaptation: true
+  adapted_file_identical_to_upstream: false
+  summary: Installation and confirmation-skipping behavior was removed and replaced with provenance-first, audit-before-import discovery.
 
 review:
-  safety_status: needs safety fix; current instructions include executable marketplace search, install, global install, and confirmation-skipping guidance
-  licensing_status: MIT declared in upstream package.json at matching commit; standalone repository license file was not found via GitHub license API during review
-  quality_status: adapt before discovery
+  safety_status: adapted for discovery-only use; pending Phase 3D behavioral evaluation
+  licensing_status: MIT declared in upstream README and package metadata; standalone license notice and copyright attribution unresolved; redistribution packaging blocked pending complete license notice
+  quality_status: pending behavioral evaluation
   reviewed_at: 2026-07-11

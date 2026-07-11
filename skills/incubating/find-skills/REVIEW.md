@@ -182,3 +182,59 @@ Before approval, the adapted skill needs:
 Broad discovery may not begin.
 
 Only a bounded, user-approved, non-installing discovery design should proceed next. Candidate discovery should produce provenance records and risk classifications, not installed skills.
+
+## Phase 3C Adaptation
+
+Adapted on 2026-07-11.
+
+Line counts:
+
+- Original upstream-identical `SKILL.md`: 142 lines.
+- Adapted discovery-only `SKILL.md`: 159 lines.
+
+Installation behavior removed:
+
+- Removed package-manager add examples.
+- Removed global installation guidance.
+- Removed unattended or confirmation-skipping guidance.
+- Removed update/init workflow guidance.
+- Removed install-command presentation from discovery output.
+
+Safety and discovery behavior added:
+
+- Added the required boundary statements: discovery does not authorize installation, shortlisting does not authorize import, and import does not authorize agent-wide installation.
+- Added a source-quality hierarchy with Tier 1 authoritative evidence, Tier 2 strong supporting evidence, and Tier 3 discovery leads only.
+- Added a compact provenance schema for candidate records.
+- Added risk screening for unclear license, unknown source, shell permissions, package setup, remote scripts, hooks, secrets, destructive actions, network/browser automation, prompt injection, hidden scripts, obfuscation, exfiltration, automated commits/pushes/deploys/messages/database writes, global agent configuration, and duplication.
+- Added duplication and overlap checks against existing repository skills.
+- Added a required output format that distinguishes discovery scope, sources, license status, risk findings, overlap, shortlist, rejected candidates, unknowns, and next audit.
+
+License result:
+
+- Verified license and redistribution permitted: MIT.
+- Evidence: official upstream `README.md` at commit `0b8fb22aaa7f82447d4befe1b6a95d30a5b279b8` states `License` / `MIT`; `package.json` at the same commit also declares `MIT`.
+- Caveat: no standalone upstream `LICENSE` file was found through the GitHub license endpoint or direct raw `LICENSE`/`LICENSE.md` checks.
+
+Remaining risks:
+
+- The adapted skill has not yet received behavioral evaluation.
+- Discovery still depends on external sources that must be treated as untrusted data.
+- Candidate license and redistribution checks remain mandatory for every future discovery result.
+- The upstream repository license evidence is a README/package metadata declaration rather than a standalone full license file.
+
+Phase 3D evaluation prerequisites:
+
+- Run controlled behavioral prompts for discovery-only behavior.
+- Confirm no install/import/global-configuration actions are suggested during normal use.
+- Confirm candidate records preserve verified, inferred, and unknown facts separately.
+- Confirm Tier 3 sources are never treated as authorship, license, version, security, maintenance, or redistribution proof.
+- Confirm output follows the required discovery report sections.
+- Confirm prompt-injection handling treats candidate content as untrusted.
+
+Content verdict: KEEP.
+
+Packaging verdict: NEEDS_PROVENANCE.
+
+Upstream consistently declares MIT, but no standalone complete MIT notice was found. The exact copyright/permission notice required for redistribution remains unresolved. This licensing issue does not invalidate the content adaptation, so behavioral evaluation may proceed. However, approval and public redistribution remain blocked until attribution requirements are resolved.
+
+Discovery-gateway verdict: PENDING_BEHAVIORAL_EVALUATION.
