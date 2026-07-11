@@ -358,6 +358,10 @@ candidates:
         - Tool execution without explicit human approval
       next_gate: adaptation_plan
       report: research/dispositions/CAND-0007.md
+    adaptation:
+      plan: research/adaptation-plans/CAND-0007-observability-investigation.md
+      evaluation_plan: research/adaptation-plans/CAND-0007-observability-evaluation.md
+      implementation_authorized: false
     unknowns: [precise_notice_requirements]
     notes: Official Prometheus implementation. Phase 5B snapshot created.
 
