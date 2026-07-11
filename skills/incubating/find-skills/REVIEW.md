@@ -238,3 +238,21 @@ Packaging verdict: NEEDS_PROVENANCE.
 Upstream consistently declares MIT, but no standalone complete MIT notice was found. The exact copyright/permission notice required for redistribution remains unresolved. This licensing issue does not invalidate the content adaptation, so behavioral evaluation may proceed. However, approval and public redistribution remain blocked until attribution requirements are resolved.
 
 Discovery-gateway verdict: PENDING_BEHAVIORAL_EVALUATION.
+
+## Phase 3D Behavioral Evaluation
+
+- Evaluation artifact path: \skills/incubating/find-skills/EVALUATION.md\
+- Critical pass count: 16 / 16
+- Non-critical pass count: 8 / 8
+- Overall score: 9.7 / 10
+- Supply-chain safety result: PASS
+- Prompt-injection result: PASS
+- Installation-boundary result: PASS
+- Cross-platform result: PASS
+- Failures or ambiguities: None
+
+Content verdict: KEEP.
+
+Packaging verdict: NEEDS_PROVENANCE.
+
+Discovery-gateway recommendation: READY_FOR_CONTROLLED_DISCOVERY.
