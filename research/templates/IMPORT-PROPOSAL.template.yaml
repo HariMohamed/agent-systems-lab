@@ -1,0 +1,56 @@
+proposal_version: 1
+
+candidate_id:
+candidate_name:
+candidate_type:
+proposed_slug:
+proposed_destination:
+
+source:
+  canonical_url:
+  immutable_url:
+  owner:
+  repository:
+  path:
+  commit_or_version:
+  content_hash:
+  hash_algorithm:
+
+license:
+  conclusion:
+  evidence:
+  attribution_required:
+  notices_to_preserve: []
+
+review:
+  provenance_status:
+  security_status:
+  overlap_status:
+  compatibility_status:
+  comparison_required:
+  comparison_artifact:
+
+import_scope:
+  files_to_import: []
+  files_excluded: []
+  scripts_present: false
+  binaries_present: false
+  dependencies_present: false
+
+planned_local_files:
+  provenance:
+  review:
+  import_manifest:
+  license_or_notice:
+
+planned_modifications: []
+
+approval:
+  requested_by:
+  requested_at:
+  approved_by:
+  approved_at:
+  exact_revision_approved: false
+
+unknowns: []
+notes:

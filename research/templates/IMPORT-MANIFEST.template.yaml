@@ -1,0 +1,42 @@
+manifest_version: 1
+
+candidate_id:
+imported_at:
+imported_by:
+destination:
+lifecycle_status: incubating
+
+source:
+  immutable_url:
+  commit_or_version:
+  upstream_path:
+
+license:
+  conclusion:
+  notices_preserved: []
+
+files: []
+# Future file entries:
+# - path:
+#   source_path:
+#   sha256:
+#   modified_during_import:
+
+execution:
+  scripts_executed: false
+  dependencies_installed: false
+  hooks_executed: false
+  external_state_changed: false
+
+modifications:
+  adapted_during_import: false
+  summary:
+
+verification:
+  required_files_present:
+  hash_check:
+  diff_check:
+  attribution_check:
+
+unknowns: []
+notes:
