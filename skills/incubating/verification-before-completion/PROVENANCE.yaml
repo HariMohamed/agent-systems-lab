@@ -1,0 +1,24 @@
+skill_name: verification-before-completion
+origin: third-party
+status: incubating
+
+upstream:
+  repository: https://github.com/obra/superpowers
+  path: skills/verification-before-completion/SKILL.md
+  commit_or_version: "v6.1.1; raw exact file match also verified at commit 48410c7f1973bd66569a627ef27ef6619e0ba923; exact local import commit unknown"
+  license: MIT
+  author: Jesse Vincent
+
+import:
+  imported_at: unknown
+  imported_by: unknown
+
+modifications:
+  adapted: false
+  summary: Local SKILL.md is byte-identical to upstream v6.1.1/current main content; no local content modifications found.
+
+review:
+  safety_status: locally reviewed; no high-risk state-changing instruction found; open upstream issue #1754 reports an outcome-verification weakness
+  licensing_status: MIT upstream license verified; redistribution permitted with MIT copyright/license notice; local import facts still incomplete
+  quality_status: adapt before approval
+  reviewed_at: 2026-07-11
