@@ -338,8 +338,26 @@ candidates:
       latest_activity: unknown
       status: unknown
     decision:
-      status: needs_security_review
+      status: adapt
       rationale: Official Prometheus MCP server. Needs security boundary review for admin capabilities.
+    disposition:
+      primary: extract_methodology
+      direct_import_recommended: false
+      future_artifact_type: workflow
+      reusable_scope:
+        - Query-first investigation
+        - Metadata and target inspection
+        - Active-alert review
+        - Symptom versus root-cause separation
+        - Evidence-based observability reporting
+      excluded_scope:
+        - Direct MCP implementation code
+        - Automatic reload or quit endpoints
+        - Destructive TSDB operations
+        - Unrestricted production access and backend credentials
+        - Tool execution without explicit human approval
+      next_gate: adaptation_plan
+      report: research/dispositions/CAND-0007.md
     unknowns: [precise_notice_requirements]
     notes: Official Prometheus implementation. Phase 5B snapshot created.
 
@@ -431,8 +449,27 @@ candidates:
       latest_activity: unknown
       status: unknown
     decision:
-      status: needs_security_review
+      status: adapt
       rationale: Official Snyk MCP server. High risk despite being official due to potential execution of ecosystem tools.
+    disposition:
+      primary: extract_methodology
+      direct_import_recommended: false
+      future_artifact_type: workflow
+      reusable_scope:
+        - Structured security scan selection
+        - Folder-trust boundaries
+        - Distinction between findings and remediation
+        - Least-privilege and sandbox requirements
+        - Evidence-based vulnerability triage
+      excluded_scope:
+        - Snyk-specific CLI execution and automated wrappers
+        - Gradle, Maven, npm, or arbitrary ecosystem build-tool execution
+        - Automatic remediation routines
+        - Cloud account access and token handling
+        - Vendor-specific source upload assumptions
+        - Direct candidate source code
+      next_gate: adaptation_plan
+      report: research/dispositions/CAND-0009.md
     unknowns: [exact_license]
     notes: Replaces the mistaken CAND-0003 identity. Phase 5B snapshot created.
 
@@ -524,8 +561,26 @@ candidates:
       latest_activity: unknown
       status: unknown
     decision:
-      status: needs_security_review
-      rationale: Official Microsoft implementation. Requires deep security review of JavaScript injection and filesystem implications.
+      status: adapt
+      rationale: Create an original safe browser-testing workflow from general testing methodology only; browser implementation code, persistent sessions, arbitrary page-code execution, and unrestricted network or file actions remain excluded.
+    disposition:
+      primary: extract_methodology
+      direct_import_recommended: false
+      future_artifact_type: workflow
+      reusable_scope:
+        - Browser-test task decomposition
+        - Deterministic navigation and interaction
+        - Explicit screenshot and trace evidence
+        - Test isolation and ephemeral browser profiles
+        - Indirect prompt-injection handling strategies
+      excluded_scope:
+        - Browser implementation code
+        - Arbitrary JavaScript execution
+        - Unsafe initialization scripts
+        - Persistent authenticated profiles
+        - Unrestricted network access and file operations
+      next_gate: adaptation_plan
+      report: research/dispositions/CAND-0011.md
     unknowns: [exact_license]
     notes: Official alternative for Playwright MCP. Official recommendation concerning CLI plus skills for coding-agent workflows. Phase 5B snapshot created. release_commit_abbrev: 5f8fc00
 
