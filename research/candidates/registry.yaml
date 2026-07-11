@@ -19,4 +19,555 @@ allowed_decisions:
   - needs_license_review
   - needs_security_review
 
-candidates: []
+candidates:
+  - id: CAND-0001
+    candidate_name: datadog-labs-mcp-server
+    candidate_type: tool-integration
+    categories: [monitoring, observability]
+    capability: Monitoring and observability workflows
+    discovery:
+      discovered_from: Google Search
+      lead_url: https://github.com/datadog-labs/mcp-server
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/datadog-labs/mcp-server
+      owner: datadog-labs
+      repository: mcp-server
+      path: /
+      commit_or_version: unknown
+      immutable_url: unknown
+    provenance:
+      confidence: medium
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: MIT
+      evidence_source: search result summary
+      standalone_notice: unknown
+      copyright_notice: unknown
+      redistribution_status: declaration_only
+    compatibility:
+      platforms: [generic]
+      assumptions: [Datadog account]
+    risk:
+      level: high
+      execution_boundary: external_service
+      findings: [Production data exposure, closed-source managed service implementation, optional messaging or remediation-style examples]
+    overlap:
+      local_artifacts: []
+      classification: unique
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: future
+      rationale: Useful official integration reference, but not a current import candidate.
+    unknowns: [immutable_revision, content_hash, exact_license, exact_security_boundary]
+    notes: Official Datadog MCP server, documentation and integration material only. Raw artifact bytes were not retrieved during the web-only evidence pass. The current evidence interface did not expose a reliable full SHA.
+
+  - id: CAND-0002
+    candidate_name: prometheus-mcp-server
+    candidate_type: tool-integration
+    categories: [monitoring, metrics]
+    capability: Monitoring and observability workflows
+    discovery:
+      discovered_from: Google Search
+      lead_url: https://github.com/pab1it0/prometheus-mcp-server
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/pab1it0/prometheus-mcp-server
+      owner: pab1it0
+      repository: prometheus-mcp-server
+      path: /
+      commit_or_version: unknown
+      immutable_url: unknown
+    provenance:
+      confidence: low
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: MIT
+      evidence_source: search result summary
+      standalone_notice: unknown
+      copyright_notice: unknown
+      redistribution_status: declaration_only
+    compatibility:
+      platforms: [generic]
+      assumptions: [Prometheus server]
+    risk:
+      level: medium
+      execution_boundary: local_process
+      findings: []
+    overlap:
+      local_artifacts: []
+      classification: unique
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: needs_security_review
+      rationale: Useful capability, needs pinning to an immutable version and security review.
+    unknowns: [immutable_revision, content_hash, exact_license, security_posture]
+    notes: Community Prometheus MCP server. Raw artifact bytes were not retrieved during the web-only evidence pass. The current evidence interface did not expose a reliable full SHA.
+
+  - id: CAND-0003
+    candidate_name: snyk-mcp-server
+    candidate_type: tool-integration
+    categories: [security, vulnerabilities]
+    capability: Defensive security review
+    discovery:
+      discovered_from: Google Search
+      lead_url: https://github.com/snyk/mcp-server
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/snyk/mcp-server
+      owner: snyk
+      repository: mcp-server
+      path: /
+      commit_or_version: unknown
+      immutable_url: unknown
+    provenance:
+      confidence: low
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: unknown
+      evidence_source: unknown
+      standalone_notice: unknown
+      copyright_notice: unknown
+      redistribution_status: unresolved
+    compatibility:
+      platforms: [generic]
+      assumptions: [Snyk account]
+    risk:
+      level: unknown
+      execution_boundary: unknown
+      findings: []
+    overlap:
+      local_artifacts: []
+      classification: superseded
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: reject
+      rationale: Mistaken repository identity. Superseded by official snyk/studio-mcp.
+    unknowns: [immutable_revision, license, content_hash, security_posture]
+    notes: Incorrect repository identifier used in initial pilot. Raw artifact bytes were not retrieved during the web-only evidence pass. The current evidence interface did not expose a reliable full SHA.
+
+  - id: CAND-0004
+    candidate_name: aws-mcp-threat-modeling
+    candidate_type: tool-integration
+    categories: [security, threat-modeling]
+    capability: Defensive security review
+    discovery:
+      discovered_from: Google Search
+      lead_url: https://github.com/awslabs/threat-modeling-mcp-server
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/awslabs/threat-modeling-mcp-server
+      owner: awslabs
+      repository: threat-modeling-mcp-server
+      path: /
+      commit_or_version: unknown
+      immutable_url: unknown
+    provenance:
+      confidence: medium
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: Apache-2.0
+      evidence_source: primary web search
+      standalone_notice: unknown
+      copyright_notice: unknown
+      redistribution_status: declaration_only
+    compatibility:
+      platforms: [generic]
+      assumptions: [AWS ecosystem, uvx installation]
+    risk:
+      level: high
+      execution_boundary: local_execution
+      findings: [uvx installation from GitHub, automatic local .threatmodel writes, broad auto-approved tool list, code-validation and export operations, possible code-remediation requests, global or project-specific agent installation paths]
+    overlap:
+      local_artifacts: []
+      classification: unique
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: needs_security_review
+      rationale: Official AWS Labs project. High execution boundary risks and broad tool surface require strict review.
+    unknowns: [immutable_revision, content_hash, security_posture]
+    notes: Corrected repository name from aws-mcp-threat-modeling to threat-modeling-mcp-server. Raw artifact bytes were not retrieved during the web-only evidence pass. The current evidence interface did not expose a reliable full SHA.
+
+  - id: CAND-0005
+    candidate_name: mcp-playwright
+    candidate_type: tool-integration
+    categories: [testing, browser-automation]
+    capability: Testing strategy and evaluation
+    discovery:
+      discovered_from: Google Search
+      lead_url: https://github.com/executeautomation/mcp-playwright
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/executeautomation/mcp-playwright
+      owner: executeautomation
+      repository: mcp-playwright
+      path: /
+      commit_or_version: unknown
+      immutable_url: unknown
+    provenance:
+      confidence: low
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: unknown
+      evidence_source: unknown
+      standalone_notice: unknown
+      copyright_notice: unknown
+      redistribution_status: unresolved
+    compatibility:
+      platforms: [generic]
+      assumptions: [Playwright installed]
+    risk:
+      level: high
+      execution_boundary: browser_automation
+      findings: [Browser automation, network access, file/download implications, persistent profiles, storage state, cookies, and logged-in sessions, arbitrary initialization scripts or page code where supported]
+    overlap:
+      local_artifacts: []
+      classification: unique
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: needs_security_review
+      rationale: Needs careful security review regarding browser boundaries.
+    unknowns: [immutable_revision, license, content_hash, exact_security_boundary]
+    notes: Browser automation tool. Not the only playwright candidate. Raw artifact bytes were not retrieved during the web-only evidence pass. The current evidence interface did not expose a reliable full SHA.
+
+  - id: CAND-0006
+    candidate_name: mcp-server-tester
+    candidate_type: script
+    categories: [testing, evaluation]
+    capability: Testing strategy and evaluation
+    discovery:
+      discovered_from: Google Search
+      lead_url: https://github.com/steviec/mcp-server-tester
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/steviec/mcp-server-tester
+      owner: steviec
+      repository: mcp-server-tester
+      path: /
+      commit_or_version: v1.4.1
+      immutable_url: https://github.com/steviec/mcp-server-tester/releases/tag/v1.4.1
+    provenance:
+      confidence: medium
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: MIT
+      evidence_source: search result summary
+      standalone_notice: unknown
+      copyright_notice: unknown
+      redistribution_status: verified_permitted
+    compatibility:
+      platforms: [generic]
+      assumptions: [YAML tests]
+    risk:
+      level: high
+      execution_boundary: script_execution
+      findings: [executes tools exposed by tested servers, test cases may write and delete files, model-based evaluation can require an API key and external model calls, package execution is required, npx execution]
+    overlap:
+      local_artifacts: [evaluations/skill-audit-checklist.md]
+      classification: complementary
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: needs_security_review
+      rationale: Executable testing tool with high access.
+    unknowns: [content_hash, exact_security_boundary]
+    notes: Evaluation tool for MCP servers. Raw artifact bytes were not retrieved during the web-only evidence pass. release_commit_abbrev: 486979d
+
+  - id: CAND-0007
+    candidate_name: prometheus-mcp
+    candidate_type: tool-integration
+    categories: [monitoring, metrics]
+    capability: Monitoring and observability workflows
+    discovery:
+      discovered_from: Google Search
+      lead_url: https://github.com/prometheus/prometheus-mcp
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/prometheus/prometheus-mcp
+      owner: prometheus
+      repository: prometheus-mcp
+      path: /
+      commit_or_version: v0.18.0
+      immutable_url: https://github.com/prometheus/prometheus-mcp/releases/tag/v0.18.0
+    provenance:
+      confidence: medium
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: Apache-2.0
+      evidence_source: official repository release
+      standalone_notice: yes
+      copyright_notice: yes
+      redistribution_status: verified_with_conditions
+    compatibility:
+      platforms: [generic]
+      assumptions: [Prometheus server]
+    risk:
+      level: medium
+      execution_boundary: api_client
+      findings: [official ownership, tool capabilities, admin or write-capable APIs when present, authentication and production-metrics exposure]
+    overlap:
+      local_artifacts: []
+      classification: unique
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: needs_security_review
+      rationale: Official Prometheus MCP server. Needs security boundary review for admin capabilities.
+    unknowns: [content_hash, precise_notice_requirements]
+    notes: Official Prometheus implementation. Raw artifact bytes were not retrieved during the web-only evidence pass.
+
+  - id: CAND-0008
+    candidate_name: langfuse
+    candidate_type: workflow
+    categories: [monitoring, observability]
+    capability: Monitoring and observability workflows
+    discovery:
+      discovered_from: Non-MCP search
+      lead_url: https://github.com/langfuse/langfuse
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/langfuse/langfuse
+      owner: langfuse
+      repository: langfuse
+      path: /
+      commit_or_version: unknown
+      immutable_url: unknown
+    provenance:
+      confidence: medium
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: MIT
+      evidence_source: search result summary
+      standalone_notice: unknown
+      copyright_notice: unknown
+      redistribution_status: declaration_only
+    compatibility:
+      platforms: [generic]
+      assumptions: [Docker or cloud deployment]
+    risk:
+      level: medium
+      execution_boundary: external_service
+      findings: [Production data exposure, trace ingestion]
+    overlap:
+      local_artifacts: []
+      classification: unique
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: future
+      rationale: Non-MCP workflow for agent observability. Very useful but deferred.
+    unknowns: [immutable_revision, content_hash, exact_license]
+    notes: Open source observability for LLMs. Raw artifact bytes were not retrieved during the web-only evidence pass. The current evidence interface did not expose a reliable full SHA.
+
+  - id: CAND-0009
+    candidate_name: studio-mcp
+    candidate_type: tool-integration
+    categories: [security, vulnerabilities]
+    capability: Defensive security review
+    discovery:
+      discovered_from: Google Search correction
+      lead_url: https://github.com/snyk/studio-mcp
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/snyk/studio-mcp
+      owner: snyk
+      repository: studio-mcp
+      path: /
+      commit_or_version: v1.14.0
+      immutable_url: https://github.com/snyk/studio-mcp/releases/tag/v1.14.0
+    provenance:
+      confidence: medium
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: Apache-2.0
+      evidence_source: official repository release
+      standalone_notice: yes
+      copyright_notice: unknown
+      redistribution_status: verified_with_conditions
+    compatibility:
+      platforms: [generic]
+      assumptions: [Snyk account, Snyk CLI dependency]
+    risk:
+      level: high
+      execution_boundary: local-state-change + external-service
+      findings: [authentication operations, folder trust operation, scanning operations, potential execution of third-party ecosystem tools such as Gradle or Maven, source-code and dependency exposure, Snyk CLI execution requirements]
+    overlap:
+      local_artifacts: []
+      classification: unique
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: needs_security_review
+      rationale: Official Snyk MCP server. High risk despite being official due to potential execution of ecosystem tools.
+    unknowns: [content_hash, exact_license]
+    notes: Replaces the mistaken CAND-0003 identity. Raw artifact bytes were not retrieved during the web-only evidence pass.
+
+  - id: CAND-0010
+    candidate_name: osv-scanner
+    candidate_type: script
+    categories: [security, vulnerabilities]
+    capability: Defensive security review
+    discovery:
+      discovered_from: Non-MCP search
+      lead_url: https://github.com/google/osv-scanner
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/google/osv-scanner
+      owner: google
+      repository: osv-scanner
+      path: /
+      commit_or_version: unknown
+      immutable_url: unknown
+    provenance:
+      confidence: medium
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: Apache-2.0
+      evidence_source: search result summary
+      standalone_notice: unknown
+      copyright_notice: unknown
+      redistribution_status: declaration_only
+    compatibility:
+      platforms: [generic]
+      assumptions: [local repository]
+    risk:
+      level: medium
+      execution_boundary: script_execution
+      findings: [File reads, API calls to OSV database]
+    overlap:
+      local_artifacts: []
+      classification: unique
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: future
+      rationale: Non-MCP defensive supply-chain review script.
+    unknowns: [immutable_revision, content_hash, exact_license]
+    notes: Vulnerability scanner for dependencies. Raw artifact bytes were not retrieved during the web-only evidence pass. The current evidence interface did not expose a reliable full SHA.
+
+  - id: CAND-0011
+    candidate_name: playwright-mcp
+    candidate_type: tool-integration
+    categories: [testing, browser-automation]
+    capability: Testing strategy and evaluation
+    discovery:
+      discovered_from: Google Search correction
+      lead_url: https://github.com/microsoft/playwright-mcp
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/microsoft/playwright-mcp
+      owner: microsoft
+      repository: playwright-mcp
+      path: /
+      commit_or_version: v0.0.78
+      immutable_url: https://github.com/microsoft/playwright-mcp/releases/tag/v0.0.78
+    provenance:
+      confidence: medium
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: Apache-2.0
+      evidence_source: official repository release
+      standalone_notice: yes
+      copyright_notice: unknown
+      redistribution_status: verified_with_conditions
+    compatibility:
+      platforms: [generic]
+      assumptions: [Playwright binaries, package execution and client-configuration assumptions]
+    risk:
+      level: high
+      execution_boundary: browser_automation
+      findings: [browser/session/storage-state capabilities, browser and API automation powers, arbitrary JavaScript or HTTP capabilities, filesystem/download/session implications, high context and token overhead, network access, persistent profiles, logged-in sessions]
+    overlap:
+      local_artifacts: []
+      classification: unique
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: needs_security_review
+      rationale: Official Microsoft implementation. Requires deep security review of JavaScript injection and filesystem implications.
+    unknowns: [content_hash, exact_license]
+    notes: Official alternative for Playwright MCP. Official recommendation concerning CLI plus skills for coding-agent workflows. Raw artifact bytes were not retrieved during the web-only evidence pass. release_commit_abbrev: 5f8fc00
+
+  - id: CAND-0012
+    candidate_name: evals
+    candidate_type: evaluation
+    categories: [testing, evaluation]
+    capability: Testing strategy and evaluation
+    discovery:
+      discovered_from: Non-MCP search
+      lead_url: https://github.com/openai/evals
+      discovered_at: 2026-07-11
+    authoritative_source:
+      canonical_url: https://github.com/openai/evals
+      owner: openai
+      repository: evals
+      path: /
+      commit_or_version: unknown
+      immutable_url: unknown
+    provenance:
+      confidence: medium
+      content_hash: unknown
+      hash_algorithm: unknown
+      retrieved_at: 2026-07-11
+    license:
+      declared: MIT
+      evidence_source: search result summary
+      standalone_notice: unknown
+      copyright_notice: unknown
+      redistribution_status: declaration_only
+    compatibility:
+      platforms: [generic]
+      assumptions: [OpenAI API keys]
+    risk:
+      level: medium
+      execution_boundary: script_execution
+      findings: [API requests, arbitrary Python execution in some sandboxes]
+    overlap:
+      local_artifacts: [evaluations/skill-audit-checklist.md]
+      classification: complementary
+    maintenance:
+      latest_activity: unknown
+      status: unknown
+    decision:
+      status: future
+      rationale: High-quality evaluation framework. Deferred for now.
+    unknowns: [immutable_revision, content_hash, exact_license]
+    notes: Non-MCP agent evaluation framework. Raw artifact bytes were not retrieved during the web-only evidence pass. The current evidence interface did not expose a reliable full SHA.
