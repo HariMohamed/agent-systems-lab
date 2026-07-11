@@ -361,12 +361,23 @@ candidates:
     adaptation:
       plan: research/adaptation-plans/CAND-0007-observability-investigation.md
       evaluation_plan: research/adaptation-plans/CAND-0007-observability-evaluation.md
-      implementation_authorized: true
+      implementation_authorized: false
+      authorization_consumed: true
       implementation:
         artifact: workflows/observability-investigation/WORKFLOW.md
         status: implemented_unreviewed
-        evaluation_status: not_run
         approval_status: not_approved
+        evaluation_status: static_pass
+        evaluation:
+          artifact: evaluations/observability-investigation/BEHAVIORAL-EVALUATION.md
+          method: static_scenario_analysis
+          recommendation: APPROVE
+          total_scenarios: 39
+          critical_passed: 14
+          critical_partial: 0
+          critical_failed: 0
+          average_score: 10
+        next_gate: repository_review
     unknowns: [precise_notice_requirements]
     notes: Official Prometheus implementation. Phase 5B snapshot created.
 
