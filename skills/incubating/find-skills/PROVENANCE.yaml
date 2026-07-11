@@ -1,0 +1,24 @@
+skill_name: find-skills
+origin: third-party
+status: incubating
+
+upstream:
+  repository: https://github.com/vercel-labs/skills
+  path: skills/find-skills/SKILL.md
+  commit_or_version: 0b8fb22aaa7f82447d4befe1b6a95d30a5b279b8
+  license: MIT
+  author: unknown
+
+import:
+  imported_at: unknown
+  imported_by: unknown
+
+modifications:
+  adapted: false
+  summary: Local SKILL.md matches upstream commit 0b8fb22aaa7f82447d4befe1b6a95d30a5b279b8 byte-for-byte; no local content adaptations detected during Phase 3B review.
+
+review:
+  safety_status: needs safety fix; current instructions include executable marketplace search, install, global install, and confirmation-skipping guidance
+  licensing_status: MIT declared in upstream package.json at matching commit; standalone repository license file was not found via GitHub license API during review
+  quality_status: adapt before discovery
+  reviewed_at: 2026-07-11
