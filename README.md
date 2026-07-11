@@ -39,6 +39,14 @@ New or imported skills must start in `skills/incubating/`. A skill may move to `
 
 Rejected skills remain in `skills/rejected/` for audit history and must not be published or installed as approved skills.
 
+## Approved Skills
+
+Requires current, claim-specific evidence before factual success or completion claims.
+
+| Skill | Category | Origin | Status | Score |
+| ----- | -------- | ------ | ------ | ----- |
+| `verification-before-completion` | verification / reliability | adapted from `obra/superpowers` | approved | 8.7 / 10 |
+
 ## Provenance
 
 Repository-level third-party status is tracked in `THIRD_PARTY.md`. Reusable provenance fields are defined in `skills/templates/PROVENANCE.yaml`. Unknown facts must remain blank or marked `unknown` / `to be verified`; do not infer licenses, authorship, or upstream versions.

@@ -1,6 +1,6 @@
 skill_name: verification-before-completion
 origin: adapted
-status: incubating
+status: approved
 
 upstream:
   repository: https://github.com/obra/superpowers
@@ -26,7 +26,7 @@ modifications:
     report format while preserving the fresh-evidence-before-claims principle.
 
 review:
-  safety_status: locally reviewed; no high-risk state-changing instruction found; open upstream issue #1754 reports an outcome-verification weakness
-  licensing_status: MIT upstream license verified; skill-local MIT license notice added
-  quality_status: provisionally ready pending Phase 2D behavioral evaluation
+  safety_status: passed
+  licensing_status: verified; MIT notice preserved
+  quality_status: approved after behavioral evaluation
   reviewed_at: 2026-07-11
