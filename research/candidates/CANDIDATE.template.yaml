@@ -1,0 +1,55 @@
+id:
+candidate_name:
+candidate_type:
+categories: []
+capability:
+
+discovery:
+  discovered_from:
+  lead_url:
+  discovered_at:
+
+authoritative_source:
+  canonical_url:
+  owner:
+  repository:
+  path:
+  commit_or_version:
+  immutable_url:
+
+provenance:
+  confidence:
+  content_hash:
+  hash_algorithm:
+  retrieved_at:
+
+license:
+  declared:
+  evidence_source:
+  standalone_notice:
+  copyright_notice:
+  redistribution_status:
+
+compatibility:
+  platforms: []
+  assumptions: []
+
+risk:
+  level:
+  execution_boundary:
+  findings: []
+
+overlap:
+  local_artifacts: []
+  classification:
+
+maintenance:
+  latest_activity:
+  status:
+
+decision:
+  status:
+  rationale:
+
+unknowns: []
+notes:

@@ -1,0 +1,22 @@
+schema_version: 1
+updated_at: 2026-07-11
+
+allowed_candidate_types:
+  - skill
+  - workflow
+  - script
+  - system-design
+  - evaluation
+  - tool-integration
+  - reference
+
+allowed_decisions:
+  - discovered
+  - shortlisted
+  - adapt
+  - reject
+  - future
+  - needs_license_review
+  - needs_security_review
+
+candidates: []
