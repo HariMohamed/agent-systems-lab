@@ -361,7 +361,12 @@ candidates:
     adaptation:
       plan: research/adaptation-plans/CAND-0007-observability-investigation.md
       evaluation_plan: research/adaptation-plans/CAND-0007-observability-evaluation.md
-      implementation_authorized: false
+      implementation_authorized: true
+      implementation:
+        artifact: workflows/observability-investigation/WORKFLOW.md
+        status: implemented_unreviewed
+        evaluation_status: not_run
+        approval_status: not_approved
     unknowns: [precise_notice_requirements]
     notes: Official Prometheus implementation. Phase 5B snapshot created.
 
