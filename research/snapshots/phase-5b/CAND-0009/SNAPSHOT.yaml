@@ -1,0 +1,63 @@
+snapshot_version: 1
+
+candidate_id: CAND-0009
+candidate_name: studio-mcp
+retrieved_at: 2026-07-11
+
+source:
+  canonical_repository: snyk/studio-mcp
+  release: v1.14.0
+  immutable_url: https://github.com/snyk/studio-mcp/releases/tag/v1.14.0
+  tag_object_sha: 25eb9796b6eebb7637f9ea22969cfceac107d0e0
+  resolved_commit_sha: 25eb9796b6eebb7637f9ea22969cfceac107d0e0
+  tag_type: lightweight
+  retrieval_method: direct archive download
+
+snapshot:
+  archive_sha256: 435AB700890670FBB1F10EA348890BD97FD4936563897A7013D7E6CBE2C49B52
+  archive_hash_scope: raw bytes of GitHub-generated tag source archive
+  temporary_location: system temporary directory
+  temporary_files_removed: true
+
+files:
+  total_count: 51
+  directories: 3
+  extension_counts: { ".go": 40, ".md": 5, ".txt": 6 }
+  extensionless_files: 0
+  manifests: ["go.mod"]
+  lock_files: ["go.sum"]
+  entry_points: ["pkg/mcp/main.go"]
+  script_files: []
+  manifest_scripts: []
+  build_targets: []
+  ci_workflows: [".github/workflows/"]
+  packaging_files: []
+  licenses: ["LICENSE", "licenses/"]
+  notices: ["licenses/github.com/skeema/knownhosts/NOTICE", "licenses/github.com/snyk/code-client-go/NOTICE", "licenses/gopkg.in/yaml.v3/NOTICE"]
+  security_relevant: ["pkg/mcp/main.go"]
+
+license:
+  conclusion: verified_with_conditions
+  evidence: Standalone Apache-2.0 file found.
+  notices_to_preserve: ["LICENSE", "licenses/*/NOTICE"]
+  unknowns: []
+
+security:
+  risk_level: high
+  execution_boundary: local-state-change + external-service
+  major_findings:
+    - "Snyk CLI wrapper configuration (pkg/mcp/main.go:55)"
+  stop_conditions:
+    - "unrestricted file writes"
+    - "broad tool set exposed without allowlisting"
+
+provenance:
+  confidence: high
+  hashes_captured: ["archive_sha256", "LICENSE", "go.mod"]
+  unknowns: []
+
+decision:
+  status: needs_security_review
+  rationale: Requires strict sandboxing of ecosystem process executions.
+
+notes: Snyk Studio MCP snapshot.

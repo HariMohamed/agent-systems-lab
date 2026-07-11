@@ -1,0 +1,68 @@
+snapshot_version: 1
+
+candidate_id: CAND-0011
+candidate_name: playwright-mcp
+retrieved_at: 2026-07-11
+
+source:
+  canonical_repository: microsoft/playwright-mcp
+  release: v0.0.78
+  immutable_url: https://github.com/microsoft/playwright-mcp/releases/tag/v0.0.78
+  tag_object_sha: 5f8fc00210b27b4407c375b59cda4838045d429c
+  resolved_commit_sha: 5f8fc00210b27b4407c375b59cda4838045d429c
+  tag_type: lightweight
+  retrieval_method: direct archive download
+
+snapshot:
+  archive_sha256: 590290968D2742DC8356BC317DF67D8C2CF853B071D49F4E61775012CCF653E4
+  archive_hash_scope: raw bytes of GitHub-generated tag source archive
+  temporary_location: system temporary directory
+  temporary_files_removed: true
+
+files:
+  total_count: 33
+  directories: 3
+  extension_counts: { ".ts": 10, ".md": 6, ".json": 4, ".js": 4, ".yml": 2, ".pem": 2 }
+  extensionless_files: 2
+  manifests: ["package.json"]
+  lock_files: ["package-lock.json"]
+  entry_points: ["index.js"]
+  script_files: ["cli.js", "roll.js", "update-readme.js"]
+  manifest_scripts: ["build", "test"]
+  build_targets: []
+  ci_workflows: [".github/workflows/"]
+  packaging_files: []
+  licenses: ["LICENSE"]
+  notices: []
+  security_relevant: ["index.js", "config.d.ts"]
+
+license:
+  conclusion: verified_with_conditions
+  evidence: Standalone Apache-2.0 file found.
+  notices_to_preserve: ["LICENSE"]
+  unknowns: []
+
+security:
+  risk_level: high
+  execution_boundary: browser_automation
+  major_findings:
+    - "Browser execution delegation (index.js:18-19)"
+    - "Arbitrary page initialization scripts (config.d.ts:94-100)"
+  stop_conditions:
+    - "persistent authenticated profile"
+    - "unrestricted network access"
+    - "unsafe page-code execution"
+    - "secrets in storage state"
+    - "unrestricted file upload/download"
+    - "remote browser connection with unverified endpoint"
+
+provenance:
+  confidence: high
+  hashes_captured: ["archive_sha256", "LICENSE", "package.json"]
+  unknowns: []
+
+decision:
+  status: needs_security_review
+  rationale: Requires strict isolation of browser capabilities and JS execution.
+
+notes: Microsoft Playwright MCP snapshot.

@@ -1,0 +1,65 @@
+snapshot_version: 1
+
+candidate_id: CAND-0007
+candidate_name: prometheus-mcp
+retrieved_at: 2026-07-11
+
+source:
+  canonical_repository: prometheus/prometheus-mcp
+  release: v0.18.0
+  immutable_url: https://github.com/prometheus/prometheus-mcp/releases/tag/v0.18.0
+  tag_object_sha: 924e43dbea816b92c3e79e73c1568af417e8e30e
+  resolved_commit_sha: 924e43dbea816b92c3e79e73c1568af417e8e30e
+  tag_type: lightweight
+  retrieval_method: direct archive download
+
+snapshot:
+  archive_sha256: 84D09930B3DB69E18B32974B6DE9D61C217E6CE7965F27D50A39B1143BD2B714
+  archive_hash_scope: raw bytes of GitHub-generated tag source archive
+  temporary_location: system temporary directory
+  temporary_files_removed: true
+
+files:
+  total_count: 279
+  directories: 35
+  extension_counts: { ".go": 160, ".md": 15, ".yml": 10, ".json": 5, ".png": 2 }
+  extensionless_files: 5
+  manifests: ["go.mod"]
+  lock_files: ["go.sum"]
+  entry_points: ["cmd/prometheus-mcp-server/main.go"]
+  script_files: []
+  manifest_scripts: []
+  build_targets: ["Makefile"]
+  ci_workflows: [".github/workflows/"]
+  packaging_files: ["charts/", "packaging/systemd/"]
+  licenses: ["LICENSE"]
+  notices: ["NOTICE"]
+  security_relevant: ["cmd/prometheus-mcp-server/main.go", "pkg/mcp/server.go"]
+
+license:
+  conclusion: verified_with_conditions
+  evidence: Standalone Apache-2.0 file found.
+  notices_to_preserve: ["LICENSE", "NOTICE"]
+  unknowns: []
+
+security:
+  risk_level: medium
+  execution_boundary: api_client
+  major_findings:
+    - "Prometheus TSDB Admin Exposure (cmd/prometheus-mcp-server/main.go:111)"
+  stop_conditions:
+    - "destructive admin flag enabled"
+    - "unrestricted production credentials"
+    - "broad tool set exposed without allowlisting"
+    - "write-capable management tools enabled without human approval"
+
+provenance:
+  confidence: high
+  hashes_captured: ["archive_sha256", "LICENSE", "go.mod"]
+  unknowns: []
+
+decision:
+  status: needs_security_review
+  rationale: Requires strict execution boundary controls for Prometheus queries.
+
+notes: Official Prometheus MCP server snapshot.

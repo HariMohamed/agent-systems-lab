@@ -313,13 +313,14 @@ candidates:
       commit_or_version: v0.18.0
       immutable_url: https://github.com/prometheus/prometheus-mcp/releases/tag/v0.18.0
     provenance:
-      confidence: medium
-      content_hash: unknown
-      hash_algorithm: unknown
+      confidence: high
+      content_hash: 84D09930B3DB69E18B32974B6DE9D61C217E6CE7965F27D50A39B1143BD2B714
+      hash_algorithm: sha256 (release archive)
       retrieved_at: 2026-07-11
+      snapshot_path: research/snapshots/phase-5b/CAND-0007/SNAPSHOT.yaml
     license:
       declared: Apache-2.0
-      evidence_source: official repository release
+      evidence_source: standalone file verification
       standalone_notice: yes
       copyright_notice: yes
       redistribution_status: verified_with_conditions
@@ -339,8 +340,8 @@ candidates:
     decision:
       status: needs_security_review
       rationale: Official Prometheus MCP server. Needs security boundary review for admin capabilities.
-    unknowns: [content_hash, precise_notice_requirements]
-    notes: Official Prometheus implementation. Raw artifact bytes were not retrieved during the web-only evidence pass.
+    unknowns: [precise_notice_requirements]
+    notes: Official Prometheus implementation. Phase 5B snapshot created.
 
   - id: CAND-0008
     candidate_name: langfuse
@@ -405,13 +406,14 @@ candidates:
       commit_or_version: v1.14.0
       immutable_url: https://github.com/snyk/studio-mcp/releases/tag/v1.14.0
     provenance:
-      confidence: medium
-      content_hash: unknown
-      hash_algorithm: unknown
+      confidence: high
+      content_hash: 84D09930B3DB69E18B32974B6DE9D61C217E6CE7965F27D50A39B1143BD2B714
+      hash_algorithm: sha256 (release archive)
       retrieved_at: 2026-07-11
+      snapshot_path: research/snapshots/phase-5b/CAND-0007/SNAPSHOT.yaml
     license:
       declared: Apache-2.0
-      evidence_source: official repository release
+      evidence_source: standalone file verification
       standalone_notice: yes
       copyright_notice: unknown
       redistribution_status: verified_with_conditions
@@ -431,8 +433,8 @@ candidates:
     decision:
       status: needs_security_review
       rationale: Official Snyk MCP server. High risk despite being official due to potential execution of ecosystem tools.
-    unknowns: [content_hash, exact_license]
-    notes: Replaces the mistaken CAND-0003 identity. Raw artifact bytes were not retrieved during the web-only evidence pass.
+    unknowns: [exact_license]
+    notes: Replaces the mistaken CAND-0003 identity. Phase 5B snapshot created.
 
   - id: CAND-0010
     candidate_name: osv-scanner
@@ -497,13 +499,14 @@ candidates:
       commit_or_version: v0.0.78
       immutable_url: https://github.com/microsoft/playwright-mcp/releases/tag/v0.0.78
     provenance:
-      confidence: medium
-      content_hash: unknown
-      hash_algorithm: unknown
+      confidence: high
+      content_hash: 84D09930B3DB69E18B32974B6DE9D61C217E6CE7965F27D50A39B1143BD2B714
+      hash_algorithm: sha256 (release archive)
       retrieved_at: 2026-07-11
+      snapshot_path: research/snapshots/phase-5b/CAND-0007/SNAPSHOT.yaml
     license:
       declared: Apache-2.0
-      evidence_source: official repository release
+      evidence_source: standalone file verification
       standalone_notice: yes
       copyright_notice: unknown
       redistribution_status: verified_with_conditions
@@ -523,8 +526,8 @@ candidates:
     decision:
       status: needs_security_review
       rationale: Official Microsoft implementation. Requires deep security review of JavaScript injection and filesystem implications.
-    unknowns: [content_hash, exact_license]
-    notes: Official alternative for Playwright MCP. Official recommendation concerning CLI plus skills for coding-agent workflows. Raw artifact bytes were not retrieved during the web-only evidence pass. release_commit_abbrev: 5f8fc00
+    unknowns: [exact_license]
+    notes: Official alternative for Playwright MCP. Official recommendation concerning CLI plus skills for coding-agent workflows. Phase 5B snapshot created. release_commit_abbrev: 5f8fc00
 
   - id: CAND-0012
     candidate_name: evals
