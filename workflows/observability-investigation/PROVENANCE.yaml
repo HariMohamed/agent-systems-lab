@@ -20,6 +20,27 @@ local_evidence:
   behavioral_evaluation: evaluations/observability-investigation/BEHAVIORAL-EVALUATION.md
   repository_review: evaluations/observability-investigation/REPOSITORY-REVIEW.md
 
+version: 1.0.0
+
+maintenance:
+  status: active
+  policy: policies/approved-artifact-maintenance.md
+  last_promotion:
+    report: research/pilots/phase-5h-observability-promotion.md
+  empirical_evaluation:
+    status: not_run
+    approval_blocking: false
+  next_review_trigger: behavioral_or_safety_change
+
+integrity:
+  algorithm: sha256
+  full_artifact_hash: 134908b984747dad0b8f92982f9c2f29221c77bf65275beb9a1c5c70e5f675fe
+  normalized_behavioral_body_hash: 95529a4249a50a296a1150a45f36c4cdd37c10b17f4b45ae9e0cf0f1c62ec69f
+  normalized_exclusions:
+    - lifecycle
+    - version
+    - maintenance_status
+
 promotion:
   method: explicit_repository_promotion
   behavioral_evaluation: static_scenario_analysis

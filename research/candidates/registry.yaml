@@ -393,6 +393,13 @@ candidates:
           repository_review: evaluations/observability-investigation/REPOSITORY-REVIEW.md
           empirical_model_execution: false
           cross_model_evaluation: false
+        maintenance:
+          status: active
+          version: 1.0.0
+          policy: policies/approved-artifact-maintenance.md
+          empirical_evaluation_status: not_run
+          empirical_evaluation_approval_blocking: false
+          next_review_trigger: behavioral_or_safety_change
         next_gate: maintenance
     unknowns: [precise_notice_requirements]
     notes: Official Prometheus implementation. Phase 5B snapshot created.
