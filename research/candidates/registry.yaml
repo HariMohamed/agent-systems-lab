@@ -365,8 +365,8 @@ candidates:
       authorization_consumed: true
       implementation:
         artifact: workflows/observability-investigation/WORKFLOW.md
-        status: implemented_unreviewed
-        approval_status: not_approved
+        status: implemented_approved
+        approval_status: approved
         evaluation_status: static_pass
         evaluation:
           artifact: evaluations/observability-investigation/BEHAVIORAL-EVALUATION.md
@@ -384,7 +384,16 @@ candidates:
           blocking_findings: 0
           non_blocking_findings: 6
           average_score: 9.8125
-        next_gate: promotion_review
+        promotion:
+          status: approved
+          method: explicit_repository_promotion
+          artifact: workflows/observability-investigation/WORKFLOW.md
+          provenance: workflows/observability-investigation/PROVENANCE.yaml
+          behavioral_evaluation: evaluations/observability-investigation/BEHAVIORAL-EVALUATION.md
+          repository_review: evaluations/observability-investigation/REPOSITORY-REVIEW.md
+          empirical_model_execution: false
+          cross_model_evaluation: false
+        next_gate: maintenance
     unknowns: [precise_notice_requirements]
     notes: Official Prometheus implementation. Phase 5B snapshot created.
 

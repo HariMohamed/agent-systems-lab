@@ -1,7 +1,7 @@
 ---
 name: observability-investigation
 artifact_type: workflow
-lifecycle: incubating
+lifecycle: approved
 description: Use when investigating incidents, health degradation, latency, errors, unavailable targets, alerts, or conflicting operational telemetry. Collect and correlate authorized evidence read-only, report confidence and limitations, and stop before remediation.
 ---
 

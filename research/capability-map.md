@@ -45,7 +45,14 @@ The repository currently holds 1 approved skill, 15 incubating skills, and 3 rej
 
 ### Other artifacts
 workflows:
-  No operational workflow artifacts yet.
+  - **observability-investigation**
+    - Path: `workflows/observability-investigation/WORKFLOW.md`
+    - Lifecycle: approved
+    - Artifact type: workflow
+    - Purpose: read-only operational telemetry investigation
+    - Constraint: stops before remediation
+    - Evaluation: static behavioral scenario analysis
+    - External-system execution: not performed
 
 scripts:
   No reusable executable scripts yet.

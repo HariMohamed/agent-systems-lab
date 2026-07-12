@@ -1,0 +1,28 @@
+artifact: observability-investigation
+artifact_type: workflow
+lifecycle: approved
+ownership: repository-original-synthesis
+
+repository_license: Apache-2.0
+
+methodology_sources:
+  - candidate_id: CAND-0007
+    role: methodology_inspiration_only
+    upstream_repository: prometheus/prometheus-mcp
+    upstream_release: v0.18.0
+    upstream_commit: 924e43dbea816b92c3e79e73c1568af417e8e30e
+    source_code_copied: false
+
+local_evidence:
+  disposition: research/dispositions/CAND-0007.md
+  adaptation_plan: research/adaptation-plans/CAND-0007-observability-investigation.md
+  evaluation_plan: research/adaptation-plans/CAND-0007-observability-evaluation.md
+  behavioral_evaluation: evaluations/observability-investigation/BEHAVIORAL-EVALUATION.md
+  repository_review: evaluations/observability-investigation/REPOSITORY-REVIEW.md
+
+promotion:
+  method: explicit_repository_promotion
+  behavioral_evaluation: static_scenario_analysis
+  empirical_model_execution: false
+  cross_model_evaluation: false
+  external_system_access: false
