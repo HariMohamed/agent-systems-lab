@@ -72,18 +72,19 @@ policies:
   Safety, licensing/provenance, and prompt-injection policies exist.
 
 ## Domain coverage
-- **Agent foundations**: covered-incubating
-- **Software development**: covered-incubating
-- **Testing and quality**: covered-approved
-- **DevOps and platform engineering**: covered-incubating
-- **Monitoring and reliability**: missing
-- **Cybersecurity and defensive security**: missing
-- **Architecture and system design**: missing
+- **Agent foundations**: covered-incubating (skills)
+- **Software development**: covered-incubating (skills)
+- **Testing and quality**: covered-approved (skills), approved (templates)
+- **DevOps and platform engineering**: covered-incubating (skills)
+- **Monitoring and observability**: covered-approved (workflows)
+- **Cybersecurity**: covered-approved (policies)
+- **Project and release management**: covered-approved (evaluations, policies)
+- **Architecture and system design**: missing (future coverage planned)
 - **Databases and data systems**: rejected-placeholder
 - **UI/UX and product design**: rejected-placeholder
 - **Crawling, scraping, and browser automation**: missing
 - **AI and model engineering**: missing
-- **Research and knowledge work**: covered-incubating
+- **Research and knowledge management**: covered-incubating (skills)
 
 ## Approved coverage
 The only currently approved capability is `verification-before-completion`, which provides foundational quality assurance prior to task termination.

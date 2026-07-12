@@ -1,0 +1,252 @@
+artifacts:
+  - id: SKILL-0001
+    name: verification-before-completion
+    artifact_type: skill
+    summary: Foundational quality assurance prior to task termination.
+    domain: testing-and-quality
+    capabilities: [verification-before-completion]
+    lifecycle: approved
+    maintenance_status: active
+    version: not_applicable
+    origin: adapted_third_party
+    source_confidence: verified_mutable
+    execution_risk: local_read_only
+    risk_flags: []
+    location: skills/approved/verification-before-completion/
+    owner: agent-systems-lab
+    license: Apache-2.0
+    provenance: skills/approved/verification-before-completion/PROVENANCE.yaml
+    evaluation: skills/approved/verification-before-completion/BEHAVIORAL-EVALUATION.md
+    repository_review: skills/approved/verification-before-completion/REPOSITORY-REVIEW.md
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Triggers before final completion of tasks.
+    non_activation_summary: Does not trigger during mid-task investigations.
+    last_reviewed: 2026-07-06
+    next_gate: maintenance
+
+  - id: WORKFLOW-0001
+    name: observability-investigation
+    artifact_type: workflow
+    summary: Read-only operational telemetry investigation.
+    domain: monitoring-and-observability
+    capabilities: [observability-investigation]
+    lifecycle: approved
+    maintenance_status: active
+    version: 1.0.0
+    origin: repository_original
+    source_confidence: maintainer_declared
+    execution_risk: local_read_only
+    risk_flags: []
+    location: workflows/observability-investigation/WORKFLOW.md
+    owner: agent-systems-lab
+    license: Apache-2.0
+    provenance: workflows/observability-investigation/PROVENANCE.yaml
+    evaluation: evaluations/observability-investigation/BEHAVIORAL-EVALUATION.md
+    repository_review: evaluations/observability-investigation/REPOSITORY-REVIEW.md
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Investigating incidents, health degradation, latency, errors, unavailable targets, alerts.
+    non_activation_summary: Destructive state changes, remediations, general coding.
+    last_reviewed: 2026-07-11
+    next_gate: maintenance
+
+  - id: SKILL-0002
+    name: find-skills
+    artifact_type: skill
+    summary: Deep research for identifying missing capabilities and discovery candidates.
+    domain: research-and-knowledge-management
+    capabilities: [find-skills]
+    lifecycle: incubating
+    maintenance_status: not_applicable
+    version: not_applicable
+    origin: adapted_third_party
+    source_confidence: unresolved
+    execution_risk: external_read_only
+    risk_flags: [network_access]
+    location: skills/incubating/find-skills/
+    owner: not_applicable
+    license: not_applicable
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Discovering capabilities.
+    non_activation_summary: Internal tasks.
+    last_reviewed: not_applicable
+    next_gate: behavioral_evaluation
+
+  - id: SKILL-0003
+    name: systematic-debugging
+    artifact_type: skill
+    summary: Methodological approach to debugging code failures.
+    domain: software-engineering
+    capabilities: [systematic-debugging]
+    lifecycle: incubating
+    maintenance_status: not_applicable
+    version: not_applicable
+    origin: adapted_third_party
+    source_confidence: unresolved
+    execution_risk: local_state_changing
+    risk_flags: []
+    location: skills/incubating/systematic-debugging/
+    owner: not_applicable
+    license: not_applicable
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: [WORKFLOW-0001]
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Debugging logic errors in code.
+    non_activation_summary: Investigating live production telemetry.
+    last_reviewed: not_applicable
+    next_gate: security_review
+
+  - id: POLICY-0001
+    name: safety
+    artifact_type: policy
+    summary: Mandatory global safety rules for agent actions.
+    domain: cybersecurity
+    capabilities: []
+    lifecycle: approved
+    maintenance_status: active
+    version: not_applicable
+    origin: repository_original
+    source_confidence: maintainer_declared
+    execution_risk: non_executable
+    risk_flags: []
+    location: policies/safety.md
+    owner: agent-systems-lab
+    license: Apache-2.0
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Globally applicable to all artifacts.
+    non_activation_summary: not_applicable
+    last_reviewed: not_applicable
+    next_gate: maintenance
+
+  - id: POLICY-0002
+    name: licensing-and-provenance
+    artifact_type: policy
+    summary: Mandatory licensing and origin documentation rules.
+    domain: project-and-release-management
+    capabilities: []
+    lifecycle: approved
+    maintenance_status: active
+    version: not_applicable
+    origin: repository_original
+    source_confidence: maintainer_declared
+    execution_risk: non_executable
+    risk_flags: []
+    location: policies/licensing-and-provenance.md
+    owner: agent-systems-lab
+    license: Apache-2.0
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Required for admitting third-party artifacts.
+    non_activation_summary: not_applicable
+    last_reviewed: not_applicable
+    next_gate: maintenance
+
+  - id: POLICY-0003
+    name: approved-artifact-maintenance
+    artifact_type: policy
+    summary: Maintenance and versioning policies for approved artifacts.
+    domain: project-and-release-management
+    capabilities: []
+    lifecycle: approved
+    maintenance_status: active
+    version: not_applicable
+    origin: repository_original
+    source_confidence: maintainer_declared
+    execution_risk: non_executable
+    risk_flags: []
+    location: policies/approved-artifact-maintenance.md
+    owner: agent-systems-lab
+    license: Apache-2.0
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Governs approved artifacts.
+    non_activation_summary: not_applicable
+    last_reviewed: not_applicable
+    next_gate: maintenance
+
+  - id: TEMPLATE-0001
+    name: behavioral-evaluation
+    artifact_type: template
+    summary: Format for reporting behavioral evaluation outcomes.
+    domain: testing-and-quality
+    capabilities: []
+    lifecycle: approved
+    maintenance_status: active
+    version: not_applicable
+    origin: repository_original
+    source_confidence: maintainer_declared
+    execution_risk: non_executable
+    risk_flags: []
+    location: evaluations/BEHAVIORAL-EVALUATION.template.md
+    owner: agent-systems-lab
+    license: Apache-2.0
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Used during Phase 5F evaluation.
+    non_activation_summary: not_applicable
+    last_reviewed: not_applicable
+    next_gate: maintenance
+
+  - id: EVAL-0001
+    name: candidate-readiness-checklist
+    artifact_type: evaluation
+    summary: Checklist for static candidate review.
+    domain: project-and-release-management
+    capabilities: []
+    lifecycle: approved
+    maintenance_status: active
+    version: not_applicable
+    origin: repository_original
+    source_confidence: maintainer_declared
+    execution_risk: non_executable
+    risk_flags: []
+    location: evaluations/candidate-readiness-checklist.md
+    owner: agent-systems-lab
+    license: Apache-2.0
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Used before evaluating imported capabilities.
+    non_activation_summary: not_applicable
+    last_reviewed: not_applicable
+    next_gate: maintenance

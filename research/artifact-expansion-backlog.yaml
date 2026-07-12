@@ -1,0 +1,582 @@
+backlog:
+  # Wave 1
+  - id: PLAN-001
+    title: artifact catalog validator script
+    artifact_type: script
+    primary_domain: project-and-release-management
+    priority: high
+    problem: Catalog requires manual verification.
+    expected_value: Automated validation of artifacts against catalog schema.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-002
+    title: provenance consistency checker
+    artifact_type: script
+    primary_domain: project-and-release-management
+    priority: high
+    problem: PROVENANCE.yaml requires manual inspection.
+    expected_value: Automated check against upstream sources or hashes.
+    execution_risk: external_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-003
+    title: lifecycle consistency checker
+    artifact_type: script
+    primary_domain: project-and-release-management
+    priority: high
+    problem: Disconnected lifecycle fields can mismatch.
+    expected_value: Single source of truth validation for lifecycle tags.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-004
+    title: internal-link checker
+    artifact_type: script
+    primary_domain: project-and-release-management
+    priority: medium
+    problem: Broken internal markdown references rot easily.
+    expected_value: Prevents broken document structure.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-005
+    title: markdown front-matter validator
+    artifact_type: script
+    primary_domain: project-and-release-management
+    priority: medium
+    problem: YAML front-matter missing required fields.
+    expected_value: Validates basic workflow/skill metadata rules.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-006
+    title: safe repository audit tool
+    artifact_type: tool
+    primary_domain: cybersecurity
+    priority: high
+    problem: No monolithic execution environment to securely audit repository.
+    expected_value: Sandbox-encapsulated auditing.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: architecture + functional + security + sandbox + repository review
+    status: planned
+
+  # Wave 2
+  - id: PLAN-007
+    title: behavioral evaluation harness
+    artifact_type: tool
+    primary_domain: testing-and-quality
+    priority: high
+    problem: Manual parsing of transcripts required.
+    expected_value: Automated pipeline for agent execution verification.
+    execution_risk: local_state_changing
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: architecture + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-008
+    title: fixture runner
+    artifact_type: script
+    primary_domain: testing-and-quality
+    priority: high
+    problem: Synthesizing evaluation state requires manual setup.
+    expected_value: Automated deployment of mock data and test environments.
+    execution_risk: local_state_changing
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-009
+    title: output-contract validator
+    artifact_type: script
+    primary_domain: testing-and-quality
+    priority: medium
+    problem: Checking 16-section reports is tedious.
+    expected_value: Validates markdown outputs match schema.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-010
+    title: cross-model comparison workflow
+    artifact_type: workflow
+    primary_domain: testing-and-quality
+    priority: medium
+    problem: Testing across multiple LLMs is manual.
+    expected_value: Systematic comparison of evaluation metrics across models.
+    execution_risk: external_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-011
+    title: regression evaluation script
+    artifact_type: script
+    primary_domain: testing-and-quality
+    priority: high
+    problem: Historical evaluations rot.
+    expected_value: Ensures previously passed scenarios stay passing.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+
+  # Wave 3
+  - id: PLAN-012
+    title: codebase inspection workflow
+    artifact_type: workflow
+    primary_domain: software-engineering
+    priority: medium
+    problem: Agent needs methodology for scanning large repositories.
+    expected_value: Methodological codebase understanding.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-013
+    title: test-failure triage workflow
+    artifact_type: workflow
+    primary_domain: software-engineering
+    priority: medium
+    problem: Debugging unit tests is ad-hoc.
+    expected_value: Consistent process for categorizing failures.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-014
+    title: secure code-review workflow
+    artifact_type: workflow
+    primary_domain: cybersecurity
+    priority: medium
+    problem: Code reviews lack structured security boundaries.
+    expected_value: Mandatory security checklist evaluation during review.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-015
+    title: dependency review workflow
+    artifact_type: workflow
+    primary_domain: devops
+    priority: medium
+    problem: Reviewing upstream dependencies is slow.
+    expected_value: Automated and methodological checks for license/safety.
+    execution_risk: external_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-016
+    title: release readiness workflow
+    artifact_type: workflow
+    primary_domain: project-and-release-management
+    priority: medium
+    problem: Release pipelines miss qualitative manual steps.
+    expected_value: Standardizes pre-deployment checks.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+
+  # Wave 4
+  - id: PLAN-017
+    title: incident triage workflow
+    artifact_type: workflow
+    primary_domain: incident-response
+    priority: high
+    problem: Responding to PagerDuty requires manual correlation.
+    expected_value: Unified rapid triage methodology.
+    execution_risk: external_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-018
+    title: deployment review workflow
+    artifact_type: workflow
+    primary_domain: devops
+    priority: medium
+    problem: Deployments lack systematic peer-review processes.
+    expected_value: Safely validates infrastructure configurations.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-019
+    title: CI failure investigation workflow
+    artifact_type: workflow
+    primary_domain: devops
+    priority: high
+    problem: Analyzing long CI logs is tedious.
+    expected_value: Finds root causes of CI pipeline crashes quickly.
+    execution_risk: external_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-020
+    title: container configuration review
+    artifact_type: workflow
+    primary_domain: containers-and-orchestration
+    priority: medium
+    problem: Dockerfiles often carry insecure defaults.
+    expected_value: Evaluates images against safety norms.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-021
+    title: infrastructure change-risk assessment
+    artifact_type: workflow
+    primary_domain: devops
+    priority: medium
+    problem: Terraform/IaC changes carry high blast radiuses.
+    expected_value: Systematically predicts change risk.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+
+  # Wave 5
+  - id: PLAN-022
+    title: secrets exposure review
+    artifact_type: workflow
+    primary_domain: cybersecurity
+    priority: high
+    problem: Accidental secrets committing occurs.
+    expected_value: Detects API keys or tokens in PR diffs or logs.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-023
+    title: dependency vulnerability triage
+    artifact_type: workflow
+    primary_domain: cybersecurity
+    priority: high
+    problem: CVE reports require context to assess actual impact.
+    expected_value: Analyzes if a CVE is reachable in the codebase.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-024
+    title: threat-model workflow
+    artifact_type: workflow
+    primary_domain: cybersecurity
+    priority: medium
+    problem: Threat modeling is skipped because it's slow.
+    expected_value: Structured stride analysis for feature specs.
+    execution_risk: non_executable
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-025
+    title: IAM review workflow
+    artifact_type: workflow
+    primary_domain: identity-and-access
+    priority: medium
+    problem: Over-provisioned cloud policies.
+    expected_value: Validates least-privilege logic in JSON policies.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-026
+    title: repository security baseline checker
+    artifact_type: tool
+    primary_domain: cybersecurity
+    priority: high
+    problem: Repository security settings rot over time.
+    expected_value: Validates branch protection and lifecycle integrity.
+    execution_risk: external_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: architecture + functional + security + sandbox + repository review
+    status: planned
+
+  # Wave 6
+  - id: PLAN-027
+    title: system-design review workflow
+    artifact_type: workflow
+    primary_domain: architecture-and-system-design
+    priority: medium
+    problem: Architecture lacks rigorous peer-review.
+    expected_value: Evaluates scalability and trade-offs of proposed designs.
+    execution_risk: non_executable
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-028
+    title: API contract review
+    artifact_type: workflow
+    primary_domain: architecture-and-system-design
+    priority: medium
+    problem: Breaking API changes leak into production.
+    expected_value: Analyzes OpenAPI spec diffs for compatibility.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-029
+    title: database query analysis
+    artifact_type: workflow
+    primary_domain: databases
+    priority: medium
+    problem: N+1 query patterns are missed.
+    expected_value: Methodological review of SQL plans and ORM usage.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-030
+    title: performance investigation
+    artifact_type: workflow
+    primary_domain: performance-engineering
+    priority: medium
+    problem: Slow code requires systematic profiling.
+    expected_value: A guided approach to finding application bottlenecks.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-031
+    title: load and capacity planning
+    artifact_type: workflow
+    primary_domain: performance-engineering
+    priority: medium
+    problem: Scaling requires math many developers skip.
+    expected_value: Structured estimation of required backend resources.
+    execution_risk: non_executable
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+
+  # Wave 7
+  - id: PLAN-032
+    title: accessibility review workflow
+    artifact_type: workflow
+    primary_domain: accessibility
+    priority: medium
+    problem: ARIA labels and WCAG specs are complex.
+    expected_value: Methodological review of HTML/React for accessibility.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-033
+    title: design-system consistency checker
+    artifact_type: script
+    primary_domain: ui-ux
+    priority: low
+    problem: Hard-coded colors sneak into PRs.
+    expected_value: Validates use of design tokens over raw CSS values.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-034
+    title: frontend performance review
+    artifact_type: workflow
+    primary_domain: ui-ux
+    priority: medium
+    problem: Large bundles and slow layout shifts.
+    expected_value: Analyzes build outputs and lighthouse results.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-035
+    title: responsive-layout review
+    artifact_type: workflow
+    primary_domain: ui-ux
+    priority: low
+    problem: Mobile breakage in web apps.
+    expected_value: Systematic check of CSS media queries and flexbox bounds.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-036
+    title: interaction-state audit
+    artifact_type: workflow
+    primary_domain: ui-ux
+    priority: low
+    problem: Missing loading/error states in React components.
+    expected_value: Methodological verification of UI state coverage.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+
+  # Wave 8
+  - id: PLAN-037
+    title: browser-task safety workflow
+    artifact_type: workflow
+    primary_domain: crawling-and-browser-automation
+    priority: high
+    problem: Browser agents can accidentally submit destructive forms.
+    expected_value: Read-only bounds for web navigation.
+    execution_risk: external_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-038
+    title: crawl policy checker
+    artifact_type: script
+    primary_domain: crawling-and-browser-automation
+    priority: medium
+    problem: Agents ignore robots.txt implicitly.
+    expected_value: Enforces site crawl policies programmatically.
+    execution_risk: external_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-039
+    title: robots and rate-limit review
+    artifact_type: workflow
+    primary_domain: crawling-and-browser-automation
+    priority: medium
+    problem: Scraping creates DoS vectors.
+    expected_value: Pre-flight check of targeted domains for safety limits.
+    execution_risk: non_executable
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-040
+    title: browser fixture evaluator
+    artifact_type: script
+    primary_domain: crawling-and-browser-automation
+    priority: medium
+    problem: Testing browser agents on live sites is flaky.
+    expected_value: Creates local static HTML fixtures for testing.
+    execution_risk: local_state_changing
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-041
+    title: prompt-injection page-content review
+    artifact_type: workflow
+    primary_domain: crawling-and-browser-automation
+    priority: high
+    problem: Scraped web pages can inject malicious instructions.
+    expected_value: Content-sanitization boundary workflow.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+
+  # Wave 9
+  - id: PLAN-042
+    title: prompt and instruction audit
+    artifact_type: workflow
+    primary_domain: agent-engineering
+    priority: high
+    problem: Poor instructions lead to degraded agent performance.
+    expected_value: Evaluates prompts against empirical best practices.
+    execution_risk: non_executable
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-043
+    title: agent tool-permission review
+    artifact_type: workflow
+    primary_domain: agent-engineering
+    priority: high
+    problem: Agents get over-provisioned capabilities.
+    expected_value: Enforces least privilege mapping for agent tools.
+    execution_risk: non_executable
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-044
+    title: memory architecture review
+    artifact_type: workflow
+    primary_domain: agent-engineering
+    priority: medium
+    problem: Agents forget context across long sessions.
+    expected_value: Assesses whether state-persistence bounds are correct.
+    execution_risk: non_executable
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-045
+    title: RAG evaluation workflow
+    artifact_type: workflow
+    primary_domain: ai-and-model-engineering
+    priority: medium
+    problem: RAG systems retrieve irrelevant noise.
+    expected_value: Structured checking of retrieval accuracy and hallucination.
+    execution_risk: external_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned
+  - id: PLAN-046
+    title: model output contract validator
+    artifact_type: script
+    primary_domain: ai-and-model-engineering
+    priority: medium
+    problem: Models drift from JSON schema.
+    expected_value: Validates structured output statically.
+    execution_risk: local_read_only
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + functional + security + sandbox + repository review
+    status: planned
+  - id: PLAN-047
+    title: MCP integration security review
+    artifact_type: workflow
+    primary_domain: agent-engineering
+    priority: high
+    problem: MCP servers introduce vast capability exposures.
+    expected_value: Boundary check of upstream MCP definitions.
+    execution_risk: non_executable
+    dependencies: []
+    overlap_targets: []
+    required_evaluation: static + behavioral + repository review
+    status: planned

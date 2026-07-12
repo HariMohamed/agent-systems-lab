@@ -1,4 +1,7 @@
-# Agent Systems Lab Taxonomy
+# Agent Systems Skills Taxonomy
+
+> [!NOTE]
+> This document represents the capability taxonomy originally created for early agent-skill discovery. The repository has since evolved into a broader artifact model covering workflows, scripts, tools, and system designs. For the overarching structural model, see the [Repository Artifact Architecture](file:///c:/Users/dell/OneDrive%20-%20Universit%C3%A9%20Chouaib%20Doukkali/Desktop/agent-systems-lab/research/repository-artifact-architecture.md). The taxonomy below remains relevant for classifying cognitive agent behaviors within the broader domain model.
 
 ## Purpose
 This taxonomy provides a durable, evidence-based classification system for all agent artifacts in the repository. It separates artifact types from their technical domains, standardizes lifecycle and risk assessments, and ensures artifacts are accurately categorized for discovery, auditing, and maintenance without forcing all reusable content into a single format.
