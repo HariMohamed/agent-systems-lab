@@ -1,0 +1,56 @@
+artifacts:
+  - id: SCRIPT-0002
+    name: test-fixture
+    artifact_type: script
+    summary: Valid fixture catalog entry
+    domain: testing-and-quality
+    capabilities: []
+    lifecycle: incubating
+    maintenance_status: not_applicable
+    version: not_applicable
+    origin: repository_original
+    source_confidence: verified_immutable
+    execution_risk: local_read_only
+    risk_flags: []
+    location: scripts/incubating/artifact-catalog-validator/tests/fixtures/valid/SCRIPT.md
+    owner: repository
+    license: Apache-2.0
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: not_applicable
+    non_activation_summary: not_applicable
+    last_reviewed: not_applicable
+    next_gate: none
+
+  - id: SCRIPT-0002
+    name: test-fixture-dup
+    artifact_type: script
+    summary: Valid fixture catalog entry
+    domain: testing-and-quality
+    capabilities: []
+    lifecycle: incubating
+    maintenance_status: not_applicable
+    version: not_applicable
+    origin: repository_original
+    source_confidence: verified_immutable
+    execution_risk: local_read_only
+    risk_flags: []
+    location: scripts/incubating/artifact-catalog-validator/tests/fixtures/valid/SCRIPT.md
+    owner: repository
+    license: Apache-2.0
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: not_applicable
+    non_activation_summary: not_applicable
+    last_reviewed: not_applicable
+    next_gate: none

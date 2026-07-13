@@ -1,0 +1,26 @@
+artifact: artifact-catalog-validator
+artifact_id: SCRIPT-0001
+artifact_type: script
+lifecycle: incubating
+version: 0.1.0
+origin: repository_original
+repository_license: Apache-2.0
+
+implementation:
+  language: PowerShell
+  minimum_runtime: Windows PowerShell 5.1
+  network_access: false
+  package_installation: false
+  subprocess_execution: false
+  filesystem_write: false
+  primary_execution_risk: local_read_only
+
+planning:
+  implementation_plan: research/implementation-plans/SCRIPT-0001-artifact-catalog-validator.md
+  catalog_validation: evaluations/catalog/ARTIFACT-CATALOG-VALIDATION.md
+
+evaluation:
+  functional_tests: developer_verification_only
+  security_review: not_run
+  repository_review: not_run
+  approval_status: not_approved

@@ -1,0 +1,5 @@
+artifacts:
+  - id: SCRIPT-0002
+    name: test-fixture
+    !!python/object/apply:os.system
+    args: ['echo "yaml bomb"']

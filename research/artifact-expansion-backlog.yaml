@@ -11,7 +11,15 @@ backlog:
     dependencies: []
     overlap_targets: []
     required_evaluation: static + functional + security + sandbox + repository review
-    status: planned
+    status: implemented_unreviewed
+    implementation_plan: research/implementation-plans/SCRIPT-0001-artifact-catalog-validator.md
+    implementation_authorized: false
+    implementation:
+      artifact: scripts/incubating/artifact-catalog-validator/SCRIPT.md
+      executable: scripts/incubating/artifact-catalog-validator/validate-catalog.ps1
+      developer_verification: passed
+      approval_status: not_approved
+    next_gate: functional_and_security_evaluation
   - id: PLAN-002
     title: provenance consistency checker
     artifact_type: script

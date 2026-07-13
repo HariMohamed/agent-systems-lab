@@ -16,8 +16,8 @@ artifacts:
     owner: agent-systems-lab
     license: Apache-2.0
     provenance: skills/approved/verification-before-completion/PROVENANCE.yaml
-    evaluation: skills/approved/verification-before-completion/BEHAVIORAL-EVALUATION.md
-    repository_review: skills/approved/verification-before-completion/REPOSITORY-REVIEW.md
+    evaluation: skills/approved/verification-before-completion/EVALUATION.md
+    repository_review: skills/approved/verification-before-completion/REVIEW.md
     dependencies: []
     related_artifacts: []
     supersedes: []
@@ -250,3 +250,34 @@ artifacts:
     non_activation_summary: not_applicable
     last_reviewed: not_applicable
     next_gate: maintenance
+
+  - id: SCRIPT-0001
+    name: artifact-catalog-validator
+    artifact_type: script
+    summary: Validate the controlled repository artifact catalog schema and repository-relative references.
+    domain: project-and-release-management
+    capabilities:
+      - catalog-schema-validation
+      - repository-reference-validation
+    lifecycle: incubating
+    maintenance_status: active
+    version: 0.1.0
+    origin: repository_original
+    source_confidence: verified_mutable
+    execution_risk: local_read_only
+    risk_flags:
+      - filesystem_read
+    location: scripts/incubating/artifact-catalog-validator/SCRIPT.md
+    owner: repository
+    license: Apache-2.0
+    provenance: scripts/incubating/artifact-catalog-validator/PROVENANCE.yaml
+    evaluation: not_run
+    repository_review: not_run
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Use when validating the repository-controlled artifact catalog.
+    non_activation_summary: Do not use as a general YAML validator or as proof of artifact safety.
+    last_reviewed: not_applicable
+    next_gate: functional_and_security_evaluation
