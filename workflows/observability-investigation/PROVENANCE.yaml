@@ -3,6 +3,11 @@ artifact_type: workflow
 lifecycle: approved
 ownership: repository-original-synthesis
 
+evidence:
+  status: verified
+  type: equivalent_first_party_authorship_record
+  reference: research/dispositions/CAND-0007.md
+
 repository_license: Apache-2.0
 
 methodology_sources:

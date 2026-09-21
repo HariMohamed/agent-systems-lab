@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  evaluation-gates:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Validate Python Syntax
+      run: |
+        python -m py_compile scripts/evaluate.py
+        python -m py_compile scripts/tests/test_harness.py
+
+    - name: Run Harness Unit Tests
+      run: |
+        python scripts/tests/test_harness.py
+
+    - name: Validate Skill Catalog
+      shell: pwsh
+      run: |
+        ./scripts/incubating/artifact-catalog-validator/validate-catalog.ps1 -CatalogPath catalog/artifacts.yaml
+
+    - name: Run Deterministic Skill Evaluations
+      run: |
+        python scripts/evaluate.py --all
+
+    - name: Run Security Sandbox Tests
+      run: |
+        # This explicitly tests that sandbox fail-closed behavior works or that the sandbox runs successfully if Docker is available.
+        # A result of BLOCKED (exit code 5) is acceptable and will be caught gracefully.
+        python scripts/evaluate.py --security || [ $? -eq 5 ] || exit 1

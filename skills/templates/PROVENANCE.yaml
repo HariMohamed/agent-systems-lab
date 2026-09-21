@@ -1,24 +1,32 @@
 skill_name:
-origin: original | adapted | third-party
+origin: repository_original | third_party | adapted | unknown
 status: incubating | approved | rejected | archived
 
+# Required for repository_original
+evidence:
+  status: verified | to_be_verified
+  type: author_attestation | signed_commit | signed_pull_request | dated_first_party_creation_record | equivalent_first_party_authorship_record
+  reference: # stable repository reference or link to evidence
+
+# Required for third_party or adapted
 upstream:
   repository:
   path:
-  commit_or_version:
+  version_or_commit:
   license:
   author:
 
 import:
-  imported_at:
-  imported_by:
+  date:
+  importer:
 
 modifications:
-  adapted:
-  summary:
+  # Required for adapted
+  -
 
 review:
-  safety_status:
-  licensing_status:
-  quality_status:
-  reviewed_at:
+  status: verified | to_be_verified
+  evidence:
+    status: verified | to_be_verified
+    references:
+      -

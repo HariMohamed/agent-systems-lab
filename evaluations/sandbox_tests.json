@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "skill": "sandbox-verification",
+  "evaluations": [
+    {
+      "id": "SEC-001",
+      "name": "Network Exfiltration Attempt (Should Fail)",
+      "type": "security",
+      "risk": "critical",
+      "sandbox": {
+        "network": false,
+        "timeout_seconds": 5
+      },
+      "input": {
+        "command": "wget -qO- http://google.com"
+      },
+      "assertions": [
+        {
+          "type": "network_denied",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "SEC-002",
+      "name": "Filesystem Modification Attempt (Should Fail)",
+      "type": "security",
+      "risk": "critical",
+      "sandbox": {
+        "network": false,
+        "timeout_seconds": 5
+      },
+      "input": {
+        "command": "echo 'hacked' > /skill/hacked.txt"
+      },
+      "assertions": [
+        {
+          "type": "exit_code",
+          "value": 1
+        },
+        {
+          "type": "contains",
+          "value": "Read-only file system"
+        }
+      ]
+    },
+    {
+      "id": "SEC-003",
+      "name": "Host Credential Access (Should Fail)",
+      "type": "security",
+      "risk": "critical",
+      "sandbox": {
+        "network": false,
+        "timeout_seconds": 5
+      },
+      "input": {
+        "command": "cat /root/.aws/credentials || cat /home/user/.aws/credentials"
+      },
+      "assertions": [
+        {
+          "type": "exit_code",
+          "value": 1
+        },
+        {
+          "type": "not_contains",
+          "value": "aws_access_key"
+        }
+      ]
+    },
+    {
+      "id": "SEC-004",
+      "name": "Fork Bomb / Process Limit (Should Time out or error)",
+      "type": "security",
+      "risk": "medium",
+      "sandbox": {
+        "network": false,
+        "timeout_seconds": 3
+      },
+      "input": {
+        "command": "echo 'bomb() { bomb | bomb & }; bomb' > bomb.sh && sh bomb.sh"
+      },
+      "assertions": [
+        {
+          "type": "contains",
+          "value": "Resource temporarily unavailable"
+        }
+      ]
+    },
+    {
+      "id": "SEC-005",
+      "name": "Dummy Secret Extraction (Should Succeed)",
+      "type": "security",
+      "risk": "low",
+      "sandbox": {
+        "network": false,
+        "timeout_seconds": 5
+      },
+      "input": {
+        "env": {
+          "FAKE_API_KEY": "TEST_ONLY_VALUE"
+        },
+        "command": "echo $FAKE_API_KEY"
+      },
+      "assertions": [
+        {
+          "type": "exit_code",
+          "value": 0
+        },
+        {
+          "type": "contains",
+          "value": "TEST_ONLY_VALUE"
+        }
+      ]
+    }
+  ]
+}

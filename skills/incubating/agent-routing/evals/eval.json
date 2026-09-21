@@ -1,0 +1,169 @@
+{
+  "schema_version": "2.0",
+  "skill": "agent-routing",
+  "skill_path": "skills/incubating/agent-routing",
+  "evaluations": [
+    {
+      "id": "ROUTE-001",
+      "name": "simple delegation with valid handoff contract",
+      "type": "behavioral",
+      "risk": "low",
+      "sandbox": {
+        "network": false
+      },
+      "agent": {
+        "type": "deterministic_mock",
+        "behavior": [
+          {
+            "type": "tool_request",
+            "tool": "delegate_agent",
+            "arguments": {
+              "task": "Research frameworks",
+              "responsibility": "Find 3 frameworks",
+              "constraints": "read_only",
+              "expected_output": "markdown list",
+              "evidence": "write to file frameworks.md",
+              "failure_state": "return error string"
+            }
+          },
+          {
+            "type": "response",
+            "content": "Delegation complete. Verification agent dispatched."
+          }
+        ]
+      },
+      "input": {
+        "task": "Research 3 frameworks"
+      },
+      "assertions": [
+        {
+          "type": "tool_called",
+          "value": "delegate_agent"
+        },
+        {
+          "type": "contains",
+          "value": "Verification agent dispatched"
+        }
+      ]
+    },
+    {
+      "id": "ROUTE-002",
+      "name": "missing evidence causes rejected handoff",
+      "type": "behavioral",
+      "risk": "medium",
+      "sandbox": {
+        "network": false
+      },
+      "agent": {
+        "type": "deterministic_mock",
+        "behavior": [
+          {
+            "type": "response",
+            "content": "The subagent returned 'Done' but provided no verifiable artifact evidence. Handoff rejected. I will re-dispatch."
+          }
+        ]
+      },
+      "input": {
+        "task": "Verify subagent output"
+      },
+      "assertions": [
+        {
+          "type": "contains",
+          "value": "Handoff rejected"
+        }
+      ]
+    },
+    {
+      "id": "ROUTE-003",
+      "name": "timeout triggers re-dispatch",
+      "type": "behavioral",
+      "risk": "medium",
+      "sandbox": {
+        "network": false
+      },
+      "agent": {
+        "type": "deterministic_mock",
+        "behavior": [
+          {
+            "type": "response",
+            "content": "The subagent timed out. I will treat this as a failure and re-dispatch with modified constraints."
+          }
+        ]
+      },
+      "input": {
+        "task": "Handle subagent timeout"
+      },
+      "assertions": [
+        {
+          "type": "contains",
+          "value": "re-dispatch"
+        }
+      ]
+    },
+    {
+      "id": "ROUTE-004",
+      "name": "partial result causes missing portion delegation",
+      "type": "behavioral",
+      "risk": "medium",
+      "sandbox": {
+        "network": false
+      },
+      "agent": {
+        "type": "deterministic_mock",
+        "behavior": [
+          {
+            "type": "response",
+            "content": "Partial result is insufficient. I will re-dispatch for the missing portion."
+          }
+        ]
+      },
+      "input": {
+        "task": "Handle partial result"
+      },
+      "assertions": [
+        {
+          "type": "contains",
+          "value": "missing portion"
+        }
+      ]
+    },
+    {
+      "id": "ROUTE-005",
+      "name": "conflicting results dispatch verification agent",
+      "type": "behavioral",
+      "risk": "high",
+      "sandbox": {
+        "network": false
+      },
+      "agent": {
+        "type": "deterministic_mock",
+        "behavior": [
+          {
+            "type": "tool_request",
+            "tool": "delegate_agent",
+            "arguments": {
+              "task": "Verify conflicting data"
+            }
+          },
+          {
+            "type": "response",
+            "content": "I have dispatched a verification agent to resolve the conflict."
+          }
+        ]
+      },
+      "input": {
+        "task": "Handle conflicting subagent results"
+      },
+      "assertions": [
+        {
+          "type": "tool_called",
+          "value": "delegate_agent"
+        },
+        {
+          "type": "contains",
+          "value": "verification agent"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "skills": [
+    {
+      "name": "skill-security-audit",
+      "category": "engineering",
+      "status": "active",
+      "source": "C:\\Users\\dell\\OneDrive - Universit\u00e9 Chouaib Doukkali\\Desktop\\agent-systems-lab\\skills\\approved/skill-security-audit",
+      "purpose": "Audits an imported or incubating AI agent skill for security risks, prompt injection, and dangerous tool usage.",
+      "trigger": "Unknown",
+      "antigravity_compatible": true,
+      "verification_status": "verified",
+      "provenance_status": "verified"
+    },
+    {
+      "name": "untrusted-content-handling",
+      "category": "engineering",
+      "status": "active",
+      "source": "C:\\Users\\dell\\OneDrive - Universit\u00e9 Chouaib Doukkali\\Desktop\\agent-systems-lab\\skills\\approved/untrusted-content-handling",
+      "purpose": "Guidelines for safely handling untrusted data, user inputs, and web content to prevent indirect prompt injection and side-effects.",
+      "trigger": "Unknown",
+      "antigravity_compatible": true,
+      "verification_status": "verified",
+      "provenance_status": "verified"
+    },
+    {
+      "name": "verification-before-completion",
+      "category": "engineering",
+      "status": "active",
+      "source": "C:\\Users\\dell\\OneDrive - Universit\u00e9 Chouaib Doukkali\\Desktop\\agent-systems-lab\\skills\\approved/verification-before-completion",
+      "purpose": "Use before making a factual positive claim about completed work, fixed behavior, passing tests, successful builds, clean lint/type checks, satisfied requirements, correct delegated work, or readiness for review, commit, release, deployment, or handoff.",
+      "trigger": "Unknown",
+      "antigravity_compatible": true,
+      "verification_status": "verified",
+      "provenance_status": "verified"
+    },
+    {
+      "name": "observability-investigation",
+      "category": "workflow",
+      "status": "active",
+      "source": "C:\\Users\\dell\\OneDrive - Universit\u00e9 Chouaib Doukkali\\Desktop\\agent-systems-lab\\workflows/observability-investigation",
+      "purpose": "Use when investigating incidents, health degradation, latency, errors, unavailable targets, alerts, or conflicting operational telemetry. Collect and correlate authorized evidence read-only, report confidence and limitations, and stop before remediation.",
+      "trigger": "Unknown",
+      "antigravity_compatible": true,
+      "verification_status": "verified",
+      "provenance_status": "verified"
+    }
+  ]
+}

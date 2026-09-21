@@ -79,7 +79,7 @@ async function waitFor<T>(
 }
 ```
 
-See `condition-based-waiting-example.ts` in this directory for complete implementation with domain-specific helpers (`waitForEvent`, `waitForEventCount`, `waitForEventMatch`) from actual debugging session.
+See `condition-based-waiting-example.ts` in this directory for a domain-neutral implementation sketch. Adapt it to the project’s existing test or async-operation APIs; do not add new dependencies solely to use this technique.
 
 ## Common Mistakes
 
@@ -106,10 +106,6 @@ await new Promise(r => setTimeout(r, 200));   // Then: wait for timed behavior
 2. Based on known timing (not guessing)
 3. Comment explaining WHY
 
-## Real-World Impact
+## Evidence boundary
 
-From debugging session (2025-10-03):
-- Fixed 15 flaky tests across 3 files
-- Pass rate: 60% → 100%
-- Execution time: 40% faster
-- No more race conditions
+A condition-based wait can reduce one class of timing flake, but it does not prove that the underlying asynchronous operation is correct. Verify the behavior covered by the test and report remaining timing or concurrency limitations.

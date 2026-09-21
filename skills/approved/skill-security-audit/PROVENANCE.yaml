@@ -1,0 +1,10 @@
+skill_name: skill-security-audit
+version: 0.1.0
+license: Apache-2.0
+origin: repository_original
+status: approved
+
+evidence:
+  status: verified
+  type: author_attestation
+  reference: skills/approved/skill-security-audit/ATTESTATION.md

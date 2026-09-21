@@ -1,0 +1,7 @@
+
+# Antigravity generated skills (synced from canonical sources)
+.agents/skills/
+
+# Python cache
+__pycache__/
+*.py[cod]

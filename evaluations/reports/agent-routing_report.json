@@ -1,0 +1,403 @@
+[
+  {
+    "evaluation_id": "ROUTE-001",
+    "status": "pass",
+    "trace": [
+      {
+        "type": "agent_input",
+        "context": "skill loaded"
+      },
+      {
+        "type": "authorization_context",
+        "context": {
+          "actor_id": "primary_agent",
+          "allowed_tools": [
+            "read_file",
+            "write_file",
+            "run_command",
+            "network_request",
+            "delegate_agent"
+          ],
+          "scopes": {
+            "network": "none",
+            "filesystem": [
+              ""
+            ],
+            "secret": "deny"
+          },
+          "approval_state": "not_required"
+        }
+      },
+      {
+        "type": "agent_output",
+        "content": {
+          "type": "tool_request",
+          "tool": "delegate_agent",
+          "arguments": {
+            "task": "Research frameworks",
+            "responsibility": "Find 3 frameworks",
+            "constraints": "read_only",
+            "expected_output": "markdown list",
+            "evidence": "write to file frameworks.md",
+            "failure_state": "return error string"
+          }
+        }
+      },
+      {
+        "type": "tool_request",
+        "tool": "delegate_agent",
+        "arguments": {
+          "task": "Research frameworks",
+          "responsibility": "Find 3 frameworks",
+          "constraints": "read_only",
+          "expected_output": "markdown list",
+          "evidence": "write to file frameworks.md",
+          "failure_state": "return error string"
+        }
+      },
+      {
+        "type": "policy_decision",
+        "decision": "ALLOW",
+        "reason": null,
+        "actor": "primary_agent",
+        "tool": "delegate_agent"
+      },
+      {
+        "type": "execution_requested",
+        "idempotency_key": "32e27d963b968c76fa972a8c3d82d54bb567aee23615d08263a43a58c71edbd9",
+        "previous_status": "NOT_STARTED"
+      },
+      {
+        "type": "BUDGET_RESERVED",
+        "reservation_id": "32e27d963b968c76fa972a8c3d82d54bb567aee23615d08263a43a58c71edbd9",
+        "resource": "tool_calls",
+        "amount": 1
+      },
+      {
+        "type": "execution_started",
+        "idempotency_key": "32e27d963b968c76fa972a8c3d82d54bb567aee23615d08263a43a58c71edbd9"
+      },
+      {
+        "type": "delegation_authorized",
+        "child_id": "subagent_1",
+        "parent_id": "primary_agent"
+      },
+      {
+        "type": "child_started",
+        "child_id": "subagent_1"
+      },
+      {
+        "type": "handoff_validated",
+        "child_id": "subagent_1"
+      },
+      {
+        "type": "child_completed",
+        "child_id": "subagent_1"
+      },
+      {
+        "type": "execution_succeeded",
+        "idempotency_key": "32e27d963b968c76fa972a8c3d82d54bb567aee23615d08263a43a58c71edbd9"
+      },
+      {
+        "type": "BUDGET_CONSUMED",
+        "reservation_id": "32e27d963b968c76fa972a8c3d82d54bb567aee23615d08263a43a58c71edbd9"
+      },
+      {
+        "type": "agent_output",
+        "content": {
+          "type": "response",
+          "content": "Delegation complete. Verification agent dispatched."
+        }
+      },
+      {
+        "type": "evaluation_status",
+        "status": "completed"
+      }
+    ],
+    "assertions": {
+      "passed": [
+        {
+          "type": "tool_called",
+          "value": "delegate_agent"
+        },
+        {
+          "type": "contains",
+          "value": "Verification agent dispatched"
+        }
+      ],
+      "failed": []
+    }
+  },
+  {
+    "evaluation_id": "ROUTE-002",
+    "status": "pass",
+    "trace": [
+      {
+        "type": "agent_input",
+        "context": "skill loaded"
+      },
+      {
+        "type": "authorization_context",
+        "context": {
+          "actor_id": "primary_agent",
+          "allowed_tools": [
+            "read_file",
+            "write_file",
+            "run_command",
+            "network_request",
+            "delegate_agent"
+          ],
+          "scopes": {
+            "network": "none",
+            "filesystem": [
+              ""
+            ],
+            "secret": "deny"
+          },
+          "approval_state": "not_required"
+        }
+      },
+      {
+        "type": "agent_output",
+        "content": {
+          "type": "response",
+          "content": "The subagent returned 'Done' but provided no verifiable artifact evidence. Handoff rejected. I will re-dispatch."
+        }
+      },
+      {
+        "type": "evaluation_status",
+        "status": "completed"
+      }
+    ],
+    "assertions": {
+      "passed": [
+        {
+          "type": "contains",
+          "value": "Handoff rejected"
+        }
+      ],
+      "failed": []
+    }
+  },
+  {
+    "evaluation_id": "ROUTE-003",
+    "status": "pass",
+    "trace": [
+      {
+        "type": "agent_input",
+        "context": "skill loaded"
+      },
+      {
+        "type": "authorization_context",
+        "context": {
+          "actor_id": "primary_agent",
+          "allowed_tools": [
+            "read_file",
+            "write_file",
+            "run_command",
+            "network_request",
+            "delegate_agent"
+          ],
+          "scopes": {
+            "network": "none",
+            "filesystem": [
+              ""
+            ],
+            "secret": "deny"
+          },
+          "approval_state": "not_required"
+        }
+      },
+      {
+        "type": "agent_output",
+        "content": {
+          "type": "response",
+          "content": "The subagent timed out. I will treat this as a failure and re-dispatch with modified constraints."
+        }
+      },
+      {
+        "type": "evaluation_status",
+        "status": "completed"
+      }
+    ],
+    "assertions": {
+      "passed": [
+        {
+          "type": "contains",
+          "value": "re-dispatch"
+        }
+      ],
+      "failed": []
+    }
+  },
+  {
+    "evaluation_id": "ROUTE-004",
+    "status": "pass",
+    "trace": [
+      {
+        "type": "agent_input",
+        "context": "skill loaded"
+      },
+      {
+        "type": "authorization_context",
+        "context": {
+          "actor_id": "primary_agent",
+          "allowed_tools": [
+            "read_file",
+            "write_file",
+            "run_command",
+            "network_request",
+            "delegate_agent"
+          ],
+          "scopes": {
+            "network": "none",
+            "filesystem": [
+              ""
+            ],
+            "secret": "deny"
+          },
+          "approval_state": "not_required"
+        }
+      },
+      {
+        "type": "agent_output",
+        "content": {
+          "type": "response",
+          "content": "Partial result is insufficient. I will re-dispatch for the missing portion."
+        }
+      },
+      {
+        "type": "evaluation_status",
+        "status": "completed"
+      }
+    ],
+    "assertions": {
+      "passed": [
+        {
+          "type": "contains",
+          "value": "missing portion"
+        }
+      ],
+      "failed": []
+    }
+  },
+  {
+    "evaluation_id": "ROUTE-005",
+    "status": "pass",
+    "trace": [
+      {
+        "type": "agent_input",
+        "context": "skill loaded"
+      },
+      {
+        "type": "authorization_context",
+        "context": {
+          "actor_id": "primary_agent",
+          "allowed_tools": [
+            "read_file",
+            "write_file",
+            "run_command",
+            "network_request",
+            "delegate_agent"
+          ],
+          "scopes": {
+            "network": "none",
+            "filesystem": [
+              ""
+            ],
+            "secret": "deny"
+          },
+          "approval_state": "not_required"
+        }
+      },
+      {
+        "type": "agent_output",
+        "content": {
+          "type": "tool_request",
+          "tool": "delegate_agent",
+          "arguments": {
+            "task": "Verify conflicting data"
+          }
+        }
+      },
+      {
+        "type": "tool_request",
+        "tool": "delegate_agent",
+        "arguments": {
+          "task": "Verify conflicting data"
+        }
+      },
+      {
+        "type": "policy_decision",
+        "decision": "ALLOW",
+        "reason": null,
+        "actor": "primary_agent",
+        "tool": "delegate_agent"
+      },
+      {
+        "type": "execution_requested",
+        "idempotency_key": "9ee396d73f389a761d6f4266fabf4ee9c149b40483a2d0a14ab0f76cad78716d",
+        "previous_status": "NOT_STARTED"
+      },
+      {
+        "type": "BUDGET_RESERVED",
+        "reservation_id": "9ee396d73f389a761d6f4266fabf4ee9c149b40483a2d0a14ab0f76cad78716d",
+        "resource": "tool_calls",
+        "amount": 1
+      },
+      {
+        "type": "execution_started",
+        "idempotency_key": "9ee396d73f389a761d6f4266fabf4ee9c149b40483a2d0a14ab0f76cad78716d"
+      },
+      {
+        "type": "delegation_authorized",
+        "child_id": "subagent_1",
+        "parent_id": "primary_agent"
+      },
+      {
+        "type": "child_started",
+        "child_id": "subagent_1"
+      },
+      {
+        "type": "handoff_validated",
+        "child_id": "subagent_1"
+      },
+      {
+        "type": "child_completed",
+        "child_id": "subagent_1"
+      },
+      {
+        "type": "execution_succeeded",
+        "idempotency_key": "9ee396d73f389a761d6f4266fabf4ee9c149b40483a2d0a14ab0f76cad78716d"
+      },
+      {
+        "type": "BUDGET_CONSUMED",
+        "reservation_id": "9ee396d73f389a761d6f4266fabf4ee9c149b40483a2d0a14ab0f76cad78716d"
+      },
+      {
+        "type": "agent_output",
+        "content": {
+          "type": "response",
+          "content": "I have dispatched a verification agent to resolve the conflict."
+        }
+      },
+      {
+        "type": "evaluation_status",
+        "status": "completed"
+      }
+    ],
+    "assertions": {
+      "passed": [
+        {
+          "type": "tool_called",
+          "value": "delegate_agent"
+        },
+        {
+          "type": "contains",
+          "value": "verification agent"
+        }
+      ],
+      "failed": []
+    }
+  }
+]

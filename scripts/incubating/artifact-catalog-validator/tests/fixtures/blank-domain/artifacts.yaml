@@ -1,0 +1,28 @@
+artifacts:
+  - id: SKILL-0000
+    name: test-skill
+    artifact_type: skill
+    summary: A summary.
+    domain:
+    capabilities: []
+    lifecycle: incubating
+    maintenance_status: active
+    version: 1.0
+    origin: repository_original
+    source_confidence: maintainer_declared
+    execution_risk: local_read_only
+    risk_flags: []
+    location: skills/incubating/brainstorming/SKILL.md
+    owner: none
+    license: Apache-2.0
+    provenance: not_applicable
+    evaluation: not_applicable
+    repository_review: not_applicable
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: none
+    non_activation_summary: none
+    last_reviewed: 2026-07-23
+    next_gate: maintenance
