@@ -1,0 +1,29 @@
+skill_name: logo-design
+origin: adapted_third_party
+status: incubating
+
+upstream:
+  repository: https://github.com/kaankiziltug/logo-design-skill
+  path: skills/logo-design/
+  version_or_commit: 0ecf52e9a4b3ac92b714f7cc6e3148ab8c774134
+  license: MIT
+  author: kaankiziltug
+
+import:
+  date: 2026-10-04
+  importer: agent-systems-lab
+
+modifications:
+  - Removed CLAUDE_SKILL_DIR references for portability
+  - Removed search_library.py (depends on SVG library not imported)
+  - Removed build_catalog.py (maintainer-only script)
+  - Did NOT import assets/library/svg/ (trademarked content)
+  - Added portable path handling instructions
+
+review:
+  status: to_be_verified
+  evidence:
+    status: to_be_verified
+    references:
+      - security audit in Phase 1 report
+      - P2 line-by-line script review pending
