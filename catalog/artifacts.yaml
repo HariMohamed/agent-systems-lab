@@ -281,3 +281,32 @@ artifacts:
     non_activation_summary: Do not use as a general YAML validator or as proof of artifact safety.
     last_reviewed: not_applicable
     next_gate: functional_and_security_evaluation
+
+  - id: SKILL-0004
+    name: logo-design
+    artifact_type: skill
+    summary: Professional logo and brand-mark design methodology from brief to deliverables.
+    domain: design-and-branding
+    capabilities: [logo-design, brand-mark-design, identity-design]
+    lifecycle: incubating
+    maintenance_status: active
+    version: not_applicable
+    origin: adapted_third_party
+    source_confidence: verified_mutable
+    execution_risk: local_state_changing
+    risk_flags:
+      - filesystem_write
+    location: skills/incubating/logo-design/
+    owner: agent-systems-lab
+    license: MIT
+    provenance: skills/incubating/logo-design/PROVENANCE.yaml
+    evaluation: not_run
+    repository_review: not_run
+    dependencies: []
+    related_artifacts: []
+    supersedes: []
+    superseded_by: not_applicable
+    activation_summary: Use when designing a logo, logotype, wordmark, or brand mark.
+    non_activation_summary: Do not use for generating arbitrary UI designs or unrelated vector art.
+    last_reviewed: not_applicable
+    next_gate: security_review
